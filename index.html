@@ -1,346 +1,375 @@
-<!--
-  Energy Flat Living – optimierte Version
-  Stand: 2025-07-21
-  Enthält: Typografische Hierarchie, konsistente Komponenten, Sektion-Wrapper, optimiertes Hero.
--->
 <!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Energy Flat Living | Bezahlbarer Wohnraum für Kommunen & Unternehmen</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
-  <script>
-    /* ----------------- Tailwind Config �---------------- */
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            lato: ['Lato', 'sans-serif'],
-          },
-          colors: {
-            brand: '#d04227', // Primär
-            navy: '#3c5067', // Dunkelblau
-            sand: '#eab257', // Akzent
-            smoke: '#666666',
-          },
-        },
-      },
-    };
-  </script>
-  <style>
-    /* ----------------- Global Styles ---------------- */
-    body {
-      font-family: 'Lato', sans-serif;
-      color: #333;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energy Flat Living | Bezahlbarer Wohnraum für Kommunen & Unternehmen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+    <script>
+        /* ----------------- Tailwind Config ---------------- */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        lato: ['Lato', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: '#d04227', // Primär
+                        navy: '#3c5067', // Dunkelblau
+                        sand: '#eab257', // Akzent
+                        smoke: '#666666',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        /* ----------------- Global Styles ---------------- */
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+        }
 
-    /* Utility Wrapper */
-    .section {
-      @apply py-24 lg:py-32;
-    }
+        /* Utility Wrapper */
+        .section {
+            @apply py-24 lg:py-32;
+        }
 
-    .wrap {
-      @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl;
-    }
+        .wrap {
+            @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl;
+        }
 
-    /* Hero background overlay */
-    .hero-bg {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/hero.png');
-      background-size: cover;
-      background-position: center 30%;
-    }
+        /* Hero background overlay */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/hero.png');
+            background-size: cover;
+            background-position: center 30%;
+        }
 
-    /* Typography */
-    .section-title {
-      @apply text-4xl md:text-5xl font-black tracking-tight text-center mb-8 text-navy;
-    }
+        /* Typography */
+        .section-title {
+            @apply text-4xl md:text-5xl font-black tracking-tight text-center mb-8 text-navy;
+        }
 
-    .section-subtitle {
-      @apply text-lg leading-relaxed text-smoke text-center max-w-3xl mx-auto mb-16;
-    }
+        .section-subtitle {
+            @apply text-lg leading-relaxed text-smoke text-center max-w-3xl mx-auto mb-16;
+        }
 
-    .sub-heading {
-      @apply text-2xl font-bold text-navy mb-4;
-    }
+        .sub-heading {
+            @apply text-2xl font-bold text-navy mb-4;
+        }
 
-    /* Cards & Components */
-    .card {
-      @apply bg-white p-8 rounded-2xl shadow-lg text-center transition hover:shadow-xl;
-    }
+        /* Cards & Components */
+        .card {
+            @apply bg-white p-8 rounded-2xl shadow-lg text-center transition hover:shadow-xl hover:-translate-y-1;
+        }
 
-    .card h4 {
-      @apply text-lg font-bold mb-3 text-navy;
-    }
+        .card h4 {
+            @apply text-lg font-bold mb-3 text-navy;
+        }
 
-    .card p {
-      @apply text-sm text-smoke;
-    }
+        .card p {
+            @apply text-base text-smoke;
+        }
 
-    .step {
-      @apply bg-white p-6 rounded-lg shadow-md border-l-4 border-brand;
-    }
+        .step {
+            @apply bg-white p-8 rounded-xl shadow-lg border-l-4 border-brand;
+        }
 
-    .step h4 {
-      @apply text-xl font-bold mb-2;
-    }
+        .step h4 {
+            @apply text-xl font-bold mb-2 text-navy;
+        }
+        
+        .step p {
+            @apply text-smoke;
+        }
 
-    /* Buttons */
-    .btn-primary {
-      @apply inline-flex items-center justify-center bg-brand text-white font-bold py-3 px-6 rounded-md tracking-wide shadow-md hover:bg-brand/90 transition;
-    }
+        /* Buttons */
+        .btn {
+            @apply inline-flex items-center justify-center font-bold py-3 px-8 rounded-md tracking-wide shadow-md transition-transform hover:scale-105;
+        }
+        .btn-primary {
+            @apply btn bg-brand text-white;
+        }
 
-    .btn-secondary {
-      @apply inline-flex items-center justify-center border-2 border-navy text-navy font-bold py-3 px-6 rounded-md tracking-wide hover:bg-navy hover:text-white transition;
-    }
+        .btn-secondary {
+            @apply btn border-2 border-navy text-navy hover:bg-navy hover:text-white;
+        }
+        
+        .tab-button {
+            @apply px-5 py-2 text-sm font-medium rounded-md transition-all;
+        }
+        .tab-active {
+            @apply bg-brand text-white;
+        }
+        .tab-inactive {
+            @apply text-white/80 hover:bg-white/20;
+        }
 
-    /* FAQ */
-    .faq-question {
-      @apply flex justify-between items-center w-full text-left font-semibold text-lg py-4;
-    }
+        /* FAQ */
+        .faq-question {
+            @apply flex justify-between items-center w-full text-left font-semibold text-lg py-4;
+        }
 
-    .faq-answer {
-      @apply pb-4 pr-4 text-smoke;
-    }
-  </style>
+        .faq-answer {
+            @apply pb-4 pr-4 text-smoke;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 text-base leading-relaxed">
-  <!-- ============ HERO ============ -->
-  <header class="relative h-[90vh] flex items-center justify-center text-center text-white">
-    <figure class="absolute inset-0 hero-bg"></figure>
+    <!-- ============ HERO ============ -->
+    <header class="relative min-h-[90vh] flex items-center justify-center text-center text-white">
+        <figure class="absolute inset-0 hero-bg"></figure>
 
-    <div class="relative z-10 max-w-3xl mx-auto px-4">
-      <h1 id="headline" class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-        Mehr Rendite.<br />Weniger Risiko.
-      </h1>
+        <div class="relative z-10 max-w-4xl mx-auto px-4">
+            <h1 id="headline" class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 transition-opacity duration-300">
+                Bezahlbarer Wohnraum für Ihre Gemeinde.
+            </h1>
 
-      <p id="sub-headline" class="text-lg md:text-xl mb-8 max-w-prose mx-auto">
-        Das Energy&nbsp;Flat&nbsp;Living&nbsp;Modell: Die Antwort auf die Wohnungsnot – mit einer garantierten Warmmiete von <strong class="text-sand">12,50&nbsp;€/m²</strong>.
-      </p>
+            <p id="sub-headline" class="text-lg md:text-xl mb-8 max-w-prose mx-auto transition-opacity duration-300">
+                Das Energy&nbsp;Flat&nbsp;Living&nbsp;Modell: Die Antwort auf die Wohnungsnot – mit einer garantierten Warmmiete von <strong class="text-sand">12,50&nbsp;€/m²</strong>.
+            </p>
 
-      <!-- Tab-Switcher unter der Headline -->
-      <div class="mb-10">
-        <p class="mb-3 text-sm uppercase tracking-wider text-white/80">Wählen Sie Ihre Perspektive</p>
-        <div class="inline-flex space-x-2 rounded-lg bg-white/10 p-1 border border-white/20">
-          <button id="tab-kommunen" class="px-5 py-2 text-sm font-medium rounded-md tab-active">Für Kommunen</button>
-          <button id="tab-unternehmen" class="px-5 py-2 text-sm font-medium rounded-md tab-inactive">Für Unternehmen</button>
+            <!-- Tab-Switcher unter der Headline -->
+            <div class="mb-10">
+                <p class="mb-3 text-sm uppercase tracking-wider text-white/80">Wählen Sie Ihre Perspektive</p>
+                <div class="inline-flex space-x-2 rounded-lg bg-white/10 p-1 border border-white/20">
+                    <button id="tab-kommunen" class="tab-button">Für Kommunen</button>
+                    <button id="tab-unternehmen" class="tab-button">Für Unternehmen</button>
+                </div>
+            </div>
+
+            <a href="#contact" class="btn-primary text-lg">Jetzt Ihr Projekt starten</a>
         </div>
-      </div>
+    </header>
 
-      <a href="#contact" class="btn-primary text-lg">Jetzt Ihr Projekt starten</a>
-    </div>
-  </header>
+    <main>
+        <!-- ============ SEKTION: Zwei Krisen ============ -->
+        <section class="section bg-white">
+            <div class="wrap">
+                <h2 class="section-title">Zwei Krisen. Eine Lösung.</h2>
+                <p class="section-subtitle">Ob Wohnungsnot in den Gemeinden oder Fachkräftemangel in den Unternehmen – herkömmliche Lösungen sind zu langsam, zu teuer und zu kompliziert.</p>
 
-  <main>
-    <!-- ============ SEKTION: Zwei Krisen ============ -->
-    <section class="section bg-white">
-      <div class="wrap">
-        <h2 class="section-title">Zwei Krisen. Eine Lösung.</h2>
-        <p class="section-subtitle">Ob Wohnungsnot in den Gemeinden oder Fachkräftemangel in den Unternehmen – herkömmliche Lösungen sind zu langsam, zu teuer und zu kompliziert.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="step">
+                        <h4>Für Kommunen: Die Wohnungsnot spitzt sich zu.</h4>
+                        <p>Steigende Mieten, fehlender Wohnraum für wichtige Berufsgruppen und der enorme Druck auf die Haushalte erfordern ein Umdenken. Wir bieten eine Lösung, die schnell, sozial gerecht und ohne finanzielles Risiko ist.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Für Unternehmen: Der Wettbewerb um Fachkräfte ist hart.</h4>
+                        <p>In Hochpreisregionen wird bezahlbarer Wohnraum zum entscheidenden Standortvorteil. Bieten Sie mehr als nur ein Gehalt – mit attraktiven, nachhaltigen Werkswohnungen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div class="step">
-            <h4>Für Kommunen: Die Wohnungsnot spitzt sich zu.</h4>
-            <p>Steigende Mieten, fehlender Wohnraum für wichtige Berufsgruppen und der enorme Druck auf die Haushalte erfordern ein Umdenken. Wir bieten eine Lösung, die schnell, sozial gerecht und ohne finanzielles Risiko ist.</p>
-          </div>
-          <div class="step">
-            <h4>Für Unternehmen: Der Wettbewerb um Fachkräfte ist hart.</h4>
-            <p>In Hochpreisregionen wird bezahlbarer Wohnraum zum entscheidenden Standortvorteil. Bieten Sie mehr als nur ein Gehalt – mit attraktiven, nachhaltigen Werkswohnungen.</p>
-          </div>
+        <!-- ============ SEKTION: 3 Schritte Prinzip ============ -->
+        <section class="section bg-gray-50">
+            <div class="wrap">
+                <h2 class="section-title">Unsere Lösung in drei einfachen Schritten</h2>
+                <p class="section-subtitle">Wir haben den Prozess radikal vereinfacht. So schaffen wir gemeinsam in Rekordzeit bezahlbaren Wohnraum.</p>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/referenz-aschersleben.jpg" alt="3D-Rendering eines modernen Wohngebaeudes" class="w-full rounded-xl shadow-2xl" />
+
+                    <ol class="space-y-8">
+                        <li class="step">
+                            <h4>1. Ihr Grundstück, Ihr Gewinn</h4>
+                            <p>Sie stellen ein erschlossenes Grundstück im Erbbaurecht zur Verfügung. Es bleibt in Ihrem Besitz und generiert Einnahmen.</p>
+                        </li>
+                        <li class="step">
+                            <h4>2. Unser Investment, unser Know‑how</h4>
+                            <p>Wir übernehmen Planung, Finanzierung und Bau der energieautarken Gebäude. Für Sie entsteht kein Aufwand.</p>
+                        </li>
+                        <li class="step">
+                            <h4>3. Bezahlbarer Wohnraum, Ihr Erfolg</h4>
+                            <p>Moderner Wohnraum mit einer garantierten Warmmiete von 12,50 €/m². Ein Gewinn für Gemeinde oder Unternehmen.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SEKTION: Wirtschaftlicher Hebel ============ -->
+        <section class="section bg-white">
+            <div class="wrap grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="section-title !text-left">Der wirtschaftliche Hebel: Kabel statt Rohre</h2>
+                    <p class="section-subtitle !text-left !mx-0 !mb-12">Herkömmliche Heizsysteme verursachen bis zu 18 % der reinen Baukosten. Wir ersetzen komplexe Rohrleitungen durch eine smarte, wartungsfreie und kosteneffiziente elektrische Lösung.</p>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="sub-heading">Konventionelle Heizung: Teuer & Komplex</h3>
+                            <p class="text-smoke">Wassergeführte Systeme erfordern enormen Material- und Installationsaufwand. Hohe Anfangsinvestitionen & laufende Wartungskosten.</p>
+                        </div>
+                        <div>
+                            <h3 class="sub-heading">Unsere Lösung: Effizient & Langlebig</h3>
+                            <ul class="space-y-2 text-smoke">
+                                <li class="flex items-start"><span class="text-brand font-bold mr-2">✓</span> Geringere Investitionskosten</li>
+                                <li class="flex items-start"><span class="text-brand font-bold mr-2">✓</span> Keine Wartungskosten für die Heizung</li>
+                                <li class="flex items-start"><span class="text-brand font-bold mr-2">✓</span> Schnellere Bauzeit & höhere Zuverlässigkeit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/kostenentwicklung.png" alt="Kostenentwicklung von Heizungsanlagen" class="w-full rounded-xl shadow-md" />
+            </div>
+        </section>
+
+        <!-- ============ SEKTION: Vorteile ============ -->
+        <section class="section bg-gray-50">
+            <div class="wrap">
+                <h2 class="section-title">Ihre Vorteile auf einen Blick</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+                    <article class="card">
+                        <h4>Kein finanzielles Risiko</h4>
+                        <p>100 % Finanzierung durch uns und Partner.</p>
+                    </article>
+                    <article class="card">
+                        <h4>Schnelle Umsetzung</h4>
+                        <p>Serielle Bauweise & eingespielte Prozesse.</p>
+                    </article>
+                    <article class="card">
+                        <h4>Sozial & Nachhaltig</h4>
+                        <p>Bezahlbarer Wohnraum + ESG-Konformität.</p>
+                    </article>
+                    <article class="card">
+                        <h4>Alles aus einer Hand</h4>
+                        <p>Ein Ansprechpartner für Planung bis Schlüssel.</p>
+                    </article>
+                </div>
+
+                <div class="mt-20 text-center bg-navy text-white p-12 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold mb-2">Und für die Mieter?</h3>
+                    <p>Eine Warmmiete von <strong class="text-sand">12,50 €/m²</strong> inkl. Energieflatrate und 5&nbsp;Jahren Preisgarantie.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SEKTION: SDG ============ -->
+        <section class="section bg-white">
+            <div class="wrap">
+                <h2 class="section-title">Ein Gewinn für die Gesellschaft</h2>
+                <p class="section-subtitle">Unser Modell ist mehr als nur wirtschaftlich. Es leistet einen messbaren Beitrag zu den wichtigsten Nachhaltigkeitszielen der Vereinten Nationen (SDGs) und schafft positiven sozialen Wandel.</p>
+                <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/sdg-grafik.png" alt="Grafik, die den Beitrag zu den SDGs zeigt" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg">
+            </div>
+        </section>
+
+        <!-- ============ SEKTION: FAQ ============ -->
+        <section class="section bg-gray-50">
+            <div class="wrap max-w-3xl">
+                <h2 class="section-title">Häufig gestellte Fragen</h2>
+                <p class="section-subtitle">Die wichtigsten Antworten auf Ihre Fragen.</p>
+
+                <div id="faq-container" class="space-y-4">
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question"><span>Was passiert, wenn wir eine Tiefgarage benötigen?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
+                        <div class="faq-answer hidden">Eine Tiefgarage ist technisch möglich. Die Mehrkosten würden die Pauschalmiete moderat auf ca. 14‑15 €/m² anheben. Wir kalkulieren das individuell.</div>
+                    </div>
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question"><span>Sind auch andere Dachformen als Pultdächer möglich?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
+                        <div class="faq-answer hidden">Ja. Das Pultdach bietet die optimale Fläche für eine maximale Photovoltaik-Ausbeute. Wir können das Konzept aber auch mit anderen Dachformen wie z.B. Satteldächern umsetzen, sofern die örtlichen Gegebenheiten eine Autarkiequote von über 50% zulassen.</div>
+                    </div>
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question"><span>Wie funktioniert das Erbbaurecht genau?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
+                        <div class="faq-answer hidden">Sie als Eigentümer überlassen uns das Grundstück für einen langen Zeitraum (z.B. 99 Jahre) und erhalten dafür einen jährlichen, indexierten Erbbauzins. Das Grundstück bleibt vollständig in Ihrem Besitz.</div>
+                    </div>
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question"><span>Welche Voraussetzungen muss unser Grundstück erfüllen?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
+                        <div class="faq-answer hidden">Idealerweise ist das Grundstück bereits voll erschlossen und es besteht Baurecht. Dies ermöglicht den schnellstmöglichen Baustart. Zudem sollte es keine extreme Verschattung geben.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SEKTION: Kontakt ============ -->
+        <section id="contact" class="section bg-white">
+            <div class="wrap">
+                <h2 class="section-title">Lassen Sie uns gemeinsam bezahlbaren Wohnraum schaffen.</h2>
+                <p class="section-subtitle">Fordern Sie jetzt eine kostenlose und unverbindliche Potenzial-Analyse für Ihr Grundstück an.</p>
+
+                <form action="#" method="POST" class="max-w-xl mx-auto grid gap-6 mt-16">
+                    <input type="text" name="name" placeholder="Ihr Name" class="w-full py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-brand focus:border-brand" />
+                    <input type="text" name="organization" placeholder="Ihre Gemeinde / Ihr Unternehmen" class="w-full py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-brand focus:border-brand" />
+                    <input type="email" name="email" placeholder="E-Mail-Adresse" class="w-full py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-brand focus:border-brand" />
+                    <textarea name="message" rows="4" placeholder="Ihre Nachricht" class="w-full py-3 px-4 rounded-md border border-gray-300 shadow-sm focus:ring-brand focus:border-brand"></textarea>
+                    <button type="submit" class="btn-primary w-full">Analyse anfordern</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-navy text-white text-sm">
+        <div class="wrap py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2025 Energy Flat Living. Alle Rechte vorbehalten.</p>
+            <nav class="flex gap-6">
+                <a href="#" class="hover:underline">Impressum</a>
+                <a href="#" class="hover:underline">Datenschutz</a>
+            </nav>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- ============ SEKTION: 3 Schritte Prinzip ============ -->
-    <section class="section bg-gray-50">
-      <div class="wrap">
-        <h2 class="section-title">Unsere Lösung in drei einfachen Schritten</h2>
-        <p class="section-subtitle">Wir haben den Prozess radikal vereinfacht. So schaffen wir gemeinsam in Rekordzeit bezahlbaren Wohnraum.</p>
+    <!-- ============ Scripts ============ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabKommunen = document.getElementById('tab-kommunen');
+            const tabUnternehmen = document.getElementById('tab-unternehmen');
+            const headline = document.getElementById('headline');
+            const subHeadline = document.getElementById('sub-headline');
 
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <!-- Bild links -->
-          <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/hero.png" alt="3D-Rendering" class="w-full rounded-xl shadow-2xl" />
+            const content = {
+                kommunen: {
+                    headline: 'Bezahlbarer Wohnraum für Ihre Gemeinde.',
+                    subHeadline: 'Die Antwort auf die Wohnungsnot – mit einer garantierten Warmmiete von <strong class="text-sand">12,50 €/m²</strong>.'
+                },
+                unternehmen: {
+                    headline: 'Fachkräfte gewinnen und binden.',
+                    subHeadline: 'Ihr entscheidender Vorteil im Wettbewerb um die besten Köpfe – nachhaltig und kosteneffizient.'
+                }
+            };
 
-          <!-- Steps rechts -->
-          <ol class="space-y-8">
-            <li class="step">
-              <h4>1. Ihr Grundstück, Ihr Gewinn</h4>
-              <p>Sie stellen ein erschlossenes Grundstück im Erbbaurecht zur Verfügung. Es bleibt in Ihrem Besitz und generiert Einnahmen.</p>
-            </li>
-            <li class="step">
-              <h4>2. Unser Investment, unser Know‑how</h4>
-              <p>Wir übernehmen Planung, Finanzierung und Bau der energieautarken Gebäude. Für Sie entsteht kein Aufwand.</p>
-            </li>
-            <li class="step">
-              <h4>3. Bezahlbarer Wohnraum, Ihr Erfolg</h4>
-              <p>Moderner Wohnraum mit einer garantierten Warmmiete von 12,50 €/m². Ein Gewinn für Gemeinde oder Unternehmen.</p>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
+            function switchTab(selected) {
+                const data = content[selected];
+                headline.innerHTML = data.headline;
+                subHeadline.innerHTML = data.subHeadline;
 
-    <!-- ============ SEKTION: Wirtschaftlicher Hebel ============ -->
-    <section class="section bg-white">
-      <div class="wrap grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Text Block links -->
-        <div>
-          <h2 class="section-title">Der wirtschaftliche Hebel: Kabel statt Rohre</h2>
-          <p class="section-subtitle mb-0">Herkömmliche Heizsysteme verursachen bis zu 18 % der reinen Baukosten. Wir ersetzen komplexe Rohrleitungen durch eine smarte, wartungsfreie und kosteneffiziente elektrische Lösung.</p>
+                if (selected === 'kommunen') {
+                    tabKommunen.classList.add('tab-active');
+                    tabKommunen.classList.remove('tab-inactive');
+                    tabUnternehmen.classList.add('tab-inactive');
+                    tabUnternehmen.classList.remove('tab-active');
+                } else {
+                    tabUnternehmen.classList.add('tab-active');
+                    tabUnternehmen.classList.remove('tab-inactive');
+                    tabKommunen.classList.add('tab-inactive');
+                    tabKommunen.classList.remove('tab-active');
+                }
+            }
 
-          <div class="mt-12 space-y-8">
-            <div class="sub-heading">Konventionelle Heizung: Teuer & Komplex</div>
-            <p class="text-smoke">Wassergeführte Systeme erfordern enormen Material- und Installationsaufwand. Hohe Anfangsinvestitionen & laufende Wartungskosten.</p>
+            tabKommunen?.addEventListener('click', () => switchTab('kommunen'));
+            tabUnternehmen?.addEventListener('click', () => switchTab('unternehmen'));
+            
+            // Initial state
+            switchTab('kommunen');
 
-            <div class="sub-heading text-navy">Unsere Lösung: Effizient & Langlebig</div>
-            <ul class="space-y-2 text-smoke">
-              <li class="flex items-start"><span class="text-brand font-bold mr-2">✓</span> Geringere Investitionskosten</li>
-              <li class="flex items-start"><span class="text-brand font-bold mr-2">✓</span> Keine Wartungskosten für die Heizung</li>
-              <li class="flex items-start"><span class="text-brand font-bold mr-2">✓</span> Schnellere Bauzeit</li>
-              <li class="flex items-start"><span class="text-brand font-bold mr-2">✓</span> Höhere Zuverlässigkeit</li>
-            </ul>
-          </div>
-        </div>
-        <!-- Bild rechts -->
-        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/kostenentwicklung.png" alt="Kostenentwicklung" class="w-full rounded-xl shadow-md" />
-      </div>
-    </section>
-
-    <!-- ============ SEKTION: Vorteile ============ -->
-    <section class="section bg-gray-50">
-      <div class="wrap">
-        <h2 class="section-title">Ihre Vorteile auf einen Blick</h2>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-          <article class="card">
-            <h4>Kein finanzielles Risiko</h4>
-            <p>100 % Finanzierung durch uns und Partner.</p>
-          </article>
-          <article class="card">
-            <h4>Schnelle Umsetzung</h4>
-            <p>Serielle Bauweise & eingespielte Prozesse.</p>
-          </article>
-          <article class="card">
-            <h4>Sozial & Nachhaltig</h4>
-            <p>Bezahlbarer Wohnraum + ESG-Konformität.</p>
-          </article>
-          <article class="card">
-            <h4>Alles aus einer Hand</h4>
-            <p>Ein Ansprechpartner für Planung bis Schlüssel.</p>
-          </article>
-        </div>
-
-        <div class="mt-20 text-center bg-navy text-white p-12 rounded-lg shadow-xl">
-          <h3 class="text-2xl font-bold mb-2">Und für die Mieter?</h3>
-          <p>Eine Warmmiete von <strong class="text-sand">12,50 €/m²</strong> inkl. Energieflatrate und 5&nbsp;Jahren Preisgarantie.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================== FAQ ================== -->
-    <section class="section bg-white">
-      <div class="wrap max-w-3xl">
-        <h2 class="section-title">Häufig gestellte Fragen (FAQ)</h2>
-        <p class="section-subtitle">Die wichtigsten Antworten auf Ihre Fragen.</p>
-
-        <div id="faq-container" class="space-y-4">
-          <!-- Eintrag -->
-          <div class="border-b border-gray-200">
-            <button class="faq-question"><span>Was passiert, wenn wir eine Tiefgarage benötigen?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
-            <div class="faq-answer hidden">Eine Tiefgarage ist technisch möglich. Die Mehrkosten würden die Pauschalmiete moderat auf ca. 14‑15 €/m² anheben. Wir kalkulieren das individuell.</div>
-          </div>
-          <!-- Weitere Fragen ... -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ================== Kontakt CTA ================== -->
-    <section id="contact" class="section bg-gray-100">
-      <div class="wrap">
-        <h2 class="section-title">Lassen Sie uns gemeinsam bezahlbaren Wohnraum schaffen.</h2>
-        <p class="section-subtitle">Fordern Sie jetzt eine kostenlose Potenzial-Analyse an.</p>
-
-        <form action="#" method="POST" class="max-w-xl mx-auto grid gap-6 mt-16">
-          <input type="text" name="name" placeholder="Ihr Name" class="w-full py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-brand focus:border-brand" />
-          <input type="text" name="organization" placeholder="Ihre Gemeinde / Ihr Unternehmen" class="w-full py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-brand focus:border-brand" />
-          <input type="email" name="email" placeholder="E-Mail-Adresse" class="w-full py-3 px-4 rounded-md border-gray-300 shadow-sm focus:ring-brand focus:border-brand" />
-          <textarea name="message" rows="4" placeholder="Ihre Nachricht" class="w-full py-3 px-4 rounded-md border border-gray-300 shadow-sm focus:ring-brand focus:border-brand"></textarea>
-          <button type="submit" class="btn-primary w-full">Analyse anfordern</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="bg-navy text-white text-sm">
-    <div class="wrap py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p>&copy; 2025 Energy Flat Living. Alle Rechte vorbehalten.</p>
-      <nav class="flex gap-6">
-        <a href="#" class="hover:underline">Impressum</a>
-        <a href="#" class="hover:underline">Datenschutz</a>
-      </nav>
-    </div>
-  </footer>
-
-  <!-- ============ Scripts ============ -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      /* ---------------- Tab Switcher ---------------- */
-      const tabKommunen = document.getElementById('tab-kommunen');
-      const tabUnternehmen = document.getElementById('tab-unternehmen');
-      const headline = document.getElementById('headline');
-      const subHeadline = document.getElementById('sub-headline');
-
-      const content = {
-        kommunen: {
-          headline: 'Bezahlbarer Wohnraum f\u00fcr Ihre Gemeinde.<br class="hidden md:inline">Realisiert in Rekordzeit.',
-          subHeadline: 'Das Energy Flat Living Modell: Die Antwort auf die Wohnungsnot – mit einer garantierten Warmmiete von <strong class="text-sand">12,50 €/m\u00b2</strong>.'
-        },
-        unternehmen: {
-          headline: 'Fachkr\u00e4fte gewinnen und binden.<br class="hidden md:inline">Mit bezahlbaren Werkswohnungen.',
-          subHeadline: 'Das Energy Flat Living Modell: Ihr Vorteil im Wettbewerb um die besten K\u00f6pfe – nachhaltig und kosteneffizient.'
-        }
-      };
-
-      function switchTab(selected) {
-        headline.style.opacity = 0;
-        subHeadline.style.opacity = 0;
-        setTimeout(() => {
-          const data = content[selected];
-          headline.innerHTML = data.headline;
-          subHeadline.innerHTML = data.subHeadline;
-
-          if (selected === 'kommunen') {
-            tabKommunen.classList.add('tab-active');
-            tabUnternehmen.classList.remove('tab-active');
-          } else {
-            tabUnternehmen.classList.add('tab-active');
-            tabKommunen.classList.remove('tab-active');
-          }
-          headline.style.opacity = 1;
-          subHeadline.style.opacity = 1;
-        }, 250);
-      }
-
-      tabKommunen?.addEventListener('click', () => switchTab('kommunen'));
-      tabUnternehmen?.addEventListener('click', () => switchTab('unternehmen'));
-
-      /* ---------------- FAQ Accordion ---------------- */
-      document.querySelectorAll('.faq-question').forEach(q => {
-        q.addEventListener('click', () => {
-          const answer = q.nextElementSibling;
-          const icon = q.querySelector('svg');
-          answer?.classList.toggle('hidden');
-          icon?.classList.toggle('rotate-180');
+            // FAQ Accordion
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const answer = q.nextElementSibling;
+                    const icon = q.querySelector('svg');
+                    answer?.classList.toggle('hidden');
+                    icon?.classList.toggle('rotate-180');
+                });
+            });
         });
-      });
-    });
-  </script>
+    </script>
 </body>
 
 </html>
