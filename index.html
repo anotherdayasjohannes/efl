@@ -33,15 +33,23 @@
         body {
             font-family: 'Lato', sans-serif;
             color: #333333;
-            /* Dark Grey from CD */
         }
 
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/hero.png');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/hero.png');
             background-size: cover;
             background-position: center;
         }
 
+        /* --- Glassmorphism Effect --- */
+        .glass-pane {
+            background: rgba(25, 35, 45, 0.4); /* Dark semi-transparent background */
+            -webkit-backdrop-filter: blur(12px); /* Frosted glass effect for Safari */
+            backdrop-filter: blur(12px); /* Frosted glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Soft shadow for depth */
+        }
+        
         .tab-button {
             transition: all 0.3s ease-in-out;
         }
@@ -60,32 +68,44 @@
         .tab-inactive:hover {
              background-color: rgba(0, 0, 0, 0.4);
         }
+        
+        /* --- Card Hover Effect --- */
+        .advantage-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .advantage-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
     </style>
 </head>
 
 <body class="bg-gray-50">
 
-    <header class="hero-bg text-white">
+    <header class="hero-bg text-white min-h-screen flex flex-col">
         <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl sm:text-2xl font-bold">Energy Flat Living</h1>
             <a href="#contact" class="hidden md:inline-block bg-brand-primary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-md uppercase tracking-wider transition-colors text-sm">
                 Projekt anfragen
             </a>
         </nav>
-        <div class="container mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
-            <div class="mb-8">
-                <p class="mb-3 text-sm uppercase tracking-wider text-white/80">Wählen Sie Ihre Perspektive</p>
-                <div class="inline-flex space-x-2 rounded-lg bg-black/20 p-1 border border-white/30">
-                    <button id="tab-kommunen" class="tab-button px-4 sm:px-6 py-2 text-sm font-medium rounded-md">Für Kommunen</button>
-                    <button id="tab-unternehmen" class="tab-button px-4 sm:px-6 py-2 text-sm font-medium rounded-md">Für Unternehmen</button>
+        <div class="flex-grow flex items-center justify-center">
+             <div class="glass-pane container max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center rounded-2xl">
+                <div class="mb-8">
+                    <p class="mb-3 text-sm uppercase tracking-wider text-white/80">Wählen Sie Ihre Perspektive</p>
+                    <div class="inline-flex space-x-2 rounded-lg bg-black/20 p-1 border border-white/30">
+                        <button id="tab-kommunen" class="tab-button px-4 sm:px-6 py-2 text-sm font-medium rounded-md">Für Kommunen</button>
+                        <button id="tab-unternehmen" class="tab-button px-4 sm:px-6 py-2 text-sm font-medium rounded-md">Für Unternehmen</button>
+                    </div>
                 </div>
-            </div>
 
-            <h2 id="headline" class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 transition-opacity duration-500">Bezahlbarer Wohnraum für Ihre Gemeinde. <br class="hidden md:inline">Realisiert in Rekordzeit.</h2>
-            <p id="sub-headline" class="text-lg md:text-xl max-w-3xl mx-auto mb-8 transition-opacity duration-500">Das Energy Flat Living Modell: Die Antwort auf Wohnungsnot und Fachkräftemangel – mit einer garantierten Warmmiete von 12,50 €/m².</p>
-            <a href="#contact" class="inline-block bg-brand-primary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-md uppercase tracking-wider transition-colors text-lg">
-                Jetzt Ihr Projekt starten
-            </a>
+                <h2 id="headline" class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 transition-opacity duration-500">Bezahlbarer Wohnraum für Ihre Gemeinde. <br class="hidden md:inline">Realisiert in Rekordzeit.</h2>
+                <p id="sub-headline" class="text-lg md:text-xl max-w-3xl mx-auto mb-8 transition-opacity duration-500">Das Energy Flat Living Modell: Die Antwort auf Wohnungsnot und Fachkräftemangel – mit einer garantierten Warmmiete von 12,50 €/m².</p>
+                <a href="#contact" class="inline-block bg-brand-primary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-md uppercase tracking-wider transition-colors text-lg">
+                    Jetzt Ihr Projekt starten
+                </a>
+            </div>
         </div>
     </header>
 
@@ -165,19 +185,19 @@
             <div class="container mx-auto px-4 sm:px-6">
                  <h3 class="text-4xl font-black text-dark sm:text-5xl text-center tracking-tight">Ihre Vorteile auf einen Blick</h3>
                  <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="advantage-card bg-white p-6 rounded-lg shadow-md text-center">
                         <h4 class="font-bold text-lg mb-2">Kein finanzielles Risiko</h4>
                         <p class="text-sm text-smoke">Das Projekt wird zu 100% von uns und unseren Partnern finanziert. Ihr Budget wird nicht belastet.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="advantage-card bg-white p-6 rounded-lg shadow-md text-center">
                         <h4 class="font-bold text-lg mb-2">Schnelle Umsetzung</h4>
                         <p class="text-sm text-smoke">Durch serielle Bauweise und eingespielte Prozesse realisieren wir Projekte in Rekordzeit.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="advantage-card bg-white p-6 rounded-lg shadow-md text-center">
                         <h4 class="font-bold text-lg mb-2">Sozial & Nachhaltig</h4>
                         <p class="text-sm text-smoke">Sie schaffen bezahlbaren Wohnraum und erfüllen höchste ESG-Kriterien für eine positive CO₂-Bilanz.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="advantage-card bg-white p-6 rounded-lg shadow-md text-center">
                         <h4 class="font-bold text-lg mb-2">Alles aus einer Hand</h4>
                         <p class="text-sm text-smoke">Ein Ansprechpartner kümmert sich um den gesamten Prozess – von der Planung bis zur Schlüsselübergabe.</p>
                     </div>
@@ -189,217 +209,7 @@
             </div>
         </section>
 
-        <section class="py-20 sm:py-24 bg-white">
-            <div class="container mx-auto px-4 sm:px-6">
-                <h3 class="text-4xl font-black text-dark sm:text-5xl text-center tracking-tight">Vier Experten. Eine Mission.</h3>
-                <p class="mt-4 text-lg text-smoke text-center max-w-3xl mx-auto">Energy Flat Living bündelt die führende Kompetenz aus Energie, Bau, Immobilien und Finanzierung zu einem unschlagbaren Gesamtpaket.</p>
-                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center items-center">
-                    <div class="p-4 flex justify-center items-center h-24">
-                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-leukefeld.png" alt="Logo Timo Leukefeld" class="h-16">
-                    </div>
-                    <div class="p-4 flex justify-center items-center h-24">
-                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-3lectrify.svg" alt="Logo 3lectrify" class="h-12">
-                    </div>
-                    <div class="p-4 flex justify-center items-center h-24">
-                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-rohrer.svg" alt="Logo Rohrer Immobilien" class="h-8">
-                    </div>
-                    <div class="p-4 flex justify-center items-center h-24">
-                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-nanebau.svg" alt="Logo Nane Bau" class="h-16">
-                    </div>
-                </div>
-            </div>
-        </section>
+        </main>
 
-        <section class="py-20 sm:py-24 bg-navy text-white">
-            <div class="container mx-auto px-4 sm:px-6">
-                <h3 class="text-4xl font-black text-white sm:text-5xl text-center tracking-tight">So sieht die Zukunft aus</h3>
-                <p class="mt-4 text-lg text-gray-300 text-center max-w-3xl mx-auto">In Aschersleben haben wir gezeigt, wie aus einem Abrisskandidaten ein begehrtes, energieautarkes Wohnquartier wird.</p>
-                <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl">
-                            <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/referenz-aschersleben.jpg" alt="Referenzprojekt Aschersleben" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <div class="mt-8 lg:mt-0">
-                        <blockquote class="border-l-4 border-green pl-6 text-xl italic mb-8">
-                            "Das, was die Bundesregierung 2050 zum Standard machen will, das haben wir jetzt gebaut."
-                        </blockquote>
-                        <div class="grid grid-cols-2 gap-6 text-lg">
-                            <div><span class="block font-bold text-3xl text-brand-accent">22</span> Wohneinheiten</div>
-                            <div><span class="block font-bold text-3xl text-brand-accent">60%</span> Energieautarkie</div>
-                            <div><span class="block font-bold text-3xl text-brand-accent">100%</span> Vermietet</div>
-                            <div><span class="block font-bold text-3xl text-brand-accent">0€</span> CO₂-Steuer</div>
-                        </div>
-                        <div class="mt-8">
-                             <a href="#" class="inline-block bg-transparent border-2 border-white text-white hover:bg-white hover:text-navy font-bold py-3 px-6 rounded-md uppercase tracking-wider transition-colors">
-                                 Case Study anfordern
-                             </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="py-20 sm:py-24 bg-white">
-            <div class="container mx-auto px-4 sm:px-6">
-                <h3 class="text-4xl font-black text-dark sm:text-5xl text-center tracking-tight">Ein Gewinn für die Gesellschaft</h3>
-                <p class="mt-4 text-lg text-smoke text-center max-w-3xl mx-auto">Unser Modell ist mehr als nur wirtschaftlich. Es leistet einen messbaren Beitrag zu den wichtigsten Nachhaltigkeitszielen der Vereinten Nationen (SDGs) und schafft positiven sozialen Wandel.</p>
-                <div class="mt-16">
-                    <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/sdg-grafik.png" alt="Grafik, die den Beitrag zu den SDGs zeigt" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg">
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 sm:py-24">
-            <div class="container mx-auto px-4 sm:px-6">
-                <h3 class="text-4xl font-black text-dark sm:text-5xl text-center tracking-tight">Transparenz im Detail: Ein Projektbeispiel</h3>
-                <p class="mt-4 text-lg text-smoke text-center max-w-3xl mx-auto">So sieht ein typisches "Energy Flat Living"-Gebäude aus – vom Grundriss bis zur Kalkulation. Wir legen die Karten offen.</p>
-                <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="text-2xl font-bold text-navy mb-4">Beispiel-Grundriss</h4>
-                        <p class="text-smoke mb-4">Effiziente und helle Grundrisse mit ca. 70m² pro Wohnung, ideal für Singles, Paare und kleine Familien.</p>
-                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/grundriss.png" alt="Grundriss eines Beispielgebäudes" class="w-full rounded-lg border">
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="text-2xl font-bold text-navy mb-4">Beispiel-Kalkulation</h4>
-                        <p class="text-smoke mb-4">Unsere schlanken Prozesse und die innovative Technik ermöglichen Gestehungskosten, die bezahlbare Mieten erst möglich machen.</p>
-                        <ul class="space-y-3 text-dark">
-                            <li class="flex justify-between items-center bg-gray-50 p-3 rounded-md"><span>Wohneinheiten:</span><span class="font-bold text-lg">15</span></li>
-                            <li class="flex justify-between items-center bg-gray-50 p-3 rounded-md"><span>Gesamtwohnfläche:</span><span class="font-bold text-lg">1.050 m²</span></li>
-                            <li class="flex justify-between items-center bg-gray-50 p-3 rounded-md"><span>Herstellungskosten (Gebäude):</span><span class="font-bold text-lg">ca. 1,9 Mio. €</span></li>
-                            <li class="flex justify-between items-center bg-lightgreen p-3 rounded-md"><span>Gesamtinvestition (schlüsselfertig):</span><span class="font-bold text-lg text-navy">ca. 2,1 Mio. €</span></li>
-                        </ul>
-                        <p class="text-xs text-gray-500 mt-4">*Basierend auf dem Beispielprojekt ohne Tiefgarage. Alle Zahlen dienen der Veranschaulichung.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 sm:py-24 bg-white">
-            <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
-                <h3 class="text-4xl font-black text-dark sm:text-5xl text-center tracking-tight">Häufig gestellte Fragen (FAQ)</h3>
-                <p class="mt-4 text-lg text-smoke text-center max-w-3xl mx-auto">Die wichtigsten Antworten auf Ihre Fragen. Für alles Weitere stehen wir Ihnen persönlich zur Verfügung.</p>
-                <div id="faq-container" class="mt-16 space-y-4">
-                    <div class="border-b border-gray-200">
-                        <button class="flex justify-between items-center w-full text-left font-semibold text-lg py-4"><span>Was passiert, wenn wir eine Tiefgarage benötigen?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
-                        <div class="pb-4 pr-4 text-smoke hidden">Unser Basismodell mit 12,50 €/m² Warmmiete verzichtet bewusst auf eine Tiefgarage, um die Baukosten so gering wie möglich zu halten. Eine Tiefgarage ist jedoch bautechnisch problemlos möglich. Die Mehrkosten würden zu einer moderaten Anpassung der Pauschalmiete führen (ca. 14-15 €/m²). Wir kalkulieren das gerne individuell für Ihr Projekt.</div>
-                    </div>
-                    <div class="border-b border-gray-200">
-                        <button class="flex justify-between items-center w-full text-left font-semibold text-lg py-4"><span>Sind auch andere Dachformen als Pultdächer möglich?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
-                        <div class="pb-4 pr-4 text-smoke hidden">Ja. Das Pultdach bietet die optimale Fläche für eine maximale Photovoltaik-Ausbeute. Wir können das Konzept aber auch mit anderen Dachformen wie z.B. Satteldächern umsetzen, sofern die örtlichen Gegebenheiten (Ausrichtung, Verschattung) eine Autarkiequote von über 50% zulassen. Dies prüfen wir für jedes Grundstück individuell.</div>
-                    </div>
-                    <div class="border-b border-gray-200">
-                        <button class="flex justify-between items-center w-full text-left font-semibold text-lg py-4"><span>Wie funktioniert das Erbbaurecht genau?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
-                        <div class="pb-4 pr-4 text-smoke hidden">Sie als Eigentümer überlassen uns das Grundstück für einen langen Zeitraum (z.B. 99 Jahre) und erhalten dafür einen jährlichen, indexierten Erbbauzins. Das Grundstück bleibt vollständig in Ihrem Besitz. Wir als Erbbaurechtsnehmer errichten und betreiben das Gebäude auf unsere Kosten und unser Risiko. Es ist eine Win-Win-Situation.</div>
-                    </div>
-                    <div class="border-b border-gray-200">
-                        <button class="flex justify-between items-center w-full text-left font-semibold text-lg py-4"><span>Welche Voraussetzungen muss unser Grundstück erfüllen?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
-                        <div class="pb-4 pr-4 text-smoke hidden">Idealerweise ist das Grundstück bereits voll erschlossen (Strom, Wasser, Abwasser) und es besteht Baurecht. Dies ermöglicht den schnellstmöglichen Baustart. Zudem sollte es keine extreme Verschattung durch hohe Nachbargebäude oder dichten Baumbestand geben, um die Effizienz der Solaranlage zu gewährleisten.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-20 sm:py-24 bg-gray-100">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="max-w-3xl mx-auto text-center">
-                    <h3 class="text-4xl font-black text-dark sm:text-5xl text-center tracking-tight">Lassen Sie uns gemeinsam bezahlbaren Wohnraum schaffen.</h3>
-                    <p class="mt-4 text-lg text-smoke text-center max-w-3xl mx-auto">Haben Sie ein passendes Grundstück oder möchten mehr erfahren? Fordern Sie jetzt eine kostenlose und unverbindliche Potenzial-Analyse an.</p>
-                </div>
-                <div class="mt-16 max-w-xl mx-auto">
-                    <form action="#" method="POST" class="grid grid-cols-1 gap-y-6">
-                        <div><label for="name" class="sr-only">Name</label><input type="text" name="name" id="name" autocomplete="name" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-primary focus:border-brand-primary border-gray-300 rounded-md" placeholder="Ihr Name"></div>
-                        <div><label for="organization" class="sr-only">Organisation</label><input type="text" name="organization" id="organization" autocomplete="organization" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-primary focus:border-brand-primary border-gray-300 rounded-md" placeholder="Ihre Gemeinde / Ihr Unternehmen"></div>
-                        <div><label for="email" class="sr-only">E-Mail</label><input id="email" name="email" type="email" autocomplete="email" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-primary focus:border-brand-primary border-gray-300 rounded-md" placeholder="E-Mail-Adresse"></div>
-                        <div><label for="phone" class="sr-only">Telefon</label><input type="text" name="phone" id="phone" autocomplete="tel" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-primary focus:border-brand-primary border-gray-300 rounded-md" placeholder="Telefonnummer (optional)"></div>
-                        <div><label for="message" class="sr-only">Nachricht</label><textarea id="message" name="message" rows="4" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-brand-primary focus:border-brand-primary border border-gray-300 rounded-md" placeholder="Ihre Nachricht"></textarea></div>
-                        <div><button type="submit" class="w-full inline-flex items-center justify-center bg-brand-primary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-md uppercase tracking-wider transition-colors">Analyse anfordern</button></div>
-                    </form>
-                    <div class="mt-8 text-center text-sm text-smoke">
-                        <p>Oder kontaktieren Sie direkt unseren zentralen Ansprechpartner:</p>
-                        <p class="font-semibold mt-1">Sven Keusen | <a href="mailto:efl@rohrer-immobilien.de" class="text-navy hover:underline">efl@rohrer-immobilien.de</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-dark text-white">
-        <div class="container mx-auto py-6 px-6 text-center text-sm">
-            <p>&copy; 2025 Energy Flat Living. Alle Rechte vorbehalten.</p>
-            <div class="mt-2">
-                <a href="#" class="hover:underline px-2">Impressum</a>
-                <a href="#" class="hover:underline px-2">Datenschutz</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabKommunen = document.getElementById('tab-kommunen');
-            const tabUnternehmen = document.getElementById('tab-unternehmen');
-            const headline = document.getElementById('headline');
-            const subHeadline = document.getElementById('sub-headline');
-
-            const content = {
-                kommunen: {
-                    headline: "Bezahlbarer Wohnraum für Ihre Gemeinde. <br class='hidden md:inline'>Realisiert in Rekordzeit.",
-                    subHeadline: 'Das Energy Flat Living Modell: Die Antwort auf die Wohnungsnot – mit einer garantierten Warmmiete von <strong class="text-[#eab257]">12,50 €/m²</strong>.'
-                },
-                unternehmen: {
-                    headline: "Fachkräfte gewinnen und binden. <br class='hidden md:inline'>Mit bezahlbaren Werkswohnungen.",
-                    subHeadline: 'Das Energy Flat Living Modell: Ihr entscheidender Vorteil im Wettbewerb um die besten Köpfe – nachhaltig und kosteneffizient.'
-                }
-            };
-
-            function switchTab(selectedTab) {
-                headline.style.opacity = 0;
-                subHeadline.style.opacity = 0;
-                setTimeout(() => {
-                    const data = content[selectedTab];
-                    headline.innerHTML = data.headline;
-                    subHeadline.innerHTML = data.subHeadline;
-                    
-                    if (selectedTab === 'kommunen') {
-                        tabKommunen.classList.add('tab-active');
-                        tabKommunen.classList.remove('tab-inactive');
-                        tabUnternehmen.classList.add('tab-inactive');
-                        tabUnternehmen.classList.remove('tab-active');
-                    } else {
-                        tabUnternehmen.classList.add('tab-active');
-                        tabUnternehmen.classList.remove('tab-inactive');
-                        tabKommunen.classList.add('tab-inactive');
-                        tabKommunen.classList.remove('tab-active');
-                    }
-                    headline.style.opacity = 1;
-                    subHeadline.style.opacity = 1;
-                }, 300);
-            }
-
-            if(tabKommunen && tabUnternehmen) {
-                tabKommunen.addEventListener('click', () => switchTab('kommunen'));
-                tabUnternehmen.addEventListener('click', () => switchTab('unternehmen'));
-                // Initial call to set the default state
-                switchTab('kommunen');
-            }
-
-            // JavaScript for FAQ Accordion
-            document.querySelectorAll('#faq-container button').forEach(button => {
-                button.addEventListener('click', () => {
-                    const answer = button.nextElementSibling;
-                    const icon = button.querySelector('svg');
-
-                    if (answer) {
-                        answer.classList.toggle('hidden');
-                    }
-                    if (icon) {
-                        icon.classList.toggle('rotate-180');
-                    }
-                });
-            });
-        });
-    </script>
-
-</body>
-
+    </body>
 </html>
