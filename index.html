@@ -14,7 +14,6 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        // Added "Inter" to the font family
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
@@ -42,8 +41,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            color: #333333; /* dark-grey */
-            line-height: 1.6; /* Improved line height for readability */
+            color: #333333;
+            line-height: 1.6;
         }
 
         .hero-bg {
@@ -58,7 +57,7 @@
         }
 
         .tab-active {
-            background-color: #d04227; /* orange */
+            background-color: #d04227;
             color: white;
             transform: scale(1.05);
         }
@@ -71,10 +70,9 @@
              background-color: rgba(255, 255, 255, 0.2);
         }
         
-        /* CARD REDESIGN: Flatter look, shadow on hover */
         .advantage-card {
             background-color: white;
-            border: 1px solid #e5e7eb; /* Subtle border */
+            border: 1px solid #e5e7eb;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .advantage-card:hover {
@@ -131,17 +129,24 @@
 
     <main>
         <section class="fade-in-element py-24 sm:py-32 bg-white">
-            <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
-                <h3 class="text-4xl font-black text-dark-grey sm:text-5xl text-center tracking-tight">Zwei Krisen. Eine Lösung.</h3>
-                <p class="mt-5 text-lg text-middle-grey text-center max-w-3xl mx-auto">Ob Wohnungsnot in den Gemeinden oder Fachkräftemangel in den Unternehmen – herkömmliche Lösungen sind zu langsam, zu teuer und zu kompliziert. Es ist Zeit für einen neuen Weg.</p>
-                <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-gray-50 p-8 border border-gray-200">
-                        <h4 class="text-2xl font-bold text-dark-blue mb-4">Für Kommunen: Die Wohnungsnot spitzt sich zu.</h4>
-                        <p class="text-middle-grey">Steigende Mieten, fehlender Wohnraum für wichtige Berufsgruppen und der enorme Druck auf die kommunalen Haushalte erfordern ein Umdenken. Wir bieten eine Lösung, die schnell, sozial gerecht und ohne finanzielles Risiko für Sie ist.</p>
+            <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="relative pr-0 lg:pr-12">
+                        <h3 class="text-4xl font-black text-dark-grey sm:text-5xl tracking-tight">Zwei Krisen. <br>Eine Lösung.</h3>
+                        <p class="mt-5 text-lg text-middle-grey max-w-xl">Ob Wohnungsnot in den Gemeinden oder Fachkräftemangel in den Unternehmen – herkömmliche Lösungen sind zu langsam, zu teuer und zu kompliziert. Es ist Zeit für einen neuen Weg.</p>
+                        <div class="mt-8 space-y-6">
+                            <div>
+                                <h4 class="text-xl font-bold text-dark-blue mb-2">Für Kommunen: Die Wohnungsnot spitzt sich zu.</h4>
+                                <p class="text-middle-grey">Steigende Mieten und fehlender Wohnraum erfordern ein Umdenken. Wir bieten eine Lösung, die schnell, sozial gerecht und ohne finanzielles Risiko für Sie ist.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-dark-blue mb-2">Für Unternehmen: Der Wettbewerb um Fachkräfte ist hart.</h4>
+                                <p class="text-middle-grey">In Hochpreisregionen wird bezahlbarer Wohnraum zum entscheidenden Standortvorteil. Bieten Sie mehr als nur ein Gehalt.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-gray-50 p-8 border border-gray-200">
-                        <h4 class="text-2xl font-bold text-dark-blue mb-4">Für Unternehmen: Der Wettbewerb um Fachkräfte ist hart.</h4>
-                        <p class="text-middle-grey">In Hochpreisregionen wird bezahlbarer Wohnraum zum entscheidenden Standortvorteil. Bieten Sie Ihren Mitarbeitern mehr als nur ein Gehalt und sichern Sie sich die besten Köpfe – mit attraktiven, nachhaltigen Werkswohnungen.</p>
+                    <div class="min-h-[400px] lg:min-h-[500px]">
+                        <img src="https://images.pexels.com/photos/1845534/pexels-photo-1845534.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Moderne Fassade eines nachhaltigen Gebäudes" class="w-full h-full object-cover shadow-2xl">
                     </div>
                 </div>
             </div>
@@ -191,11 +196,11 @@
                     </div>
                     <div class="advantage-card p-6 text-center">
                         <h4 class="font-bold text-lg mb-2">Sozial & Nachhaltig</h4>
-                        <p class="text-sm text-middle-grey">Sie schaffen bezahlbaren Wohnraum und erfüllen höchste ESG-Kriterien für eine positive CO₂-Bilanz.</p>
+                        <p class="text-sm text-middle-grey">Sie schaffen bezahlbaren Wohnraum und erfüllen höchste ESG-Kriterien.</p>
                     </div>
                     <div class="advantage-card p-6 text-center">
                         <h4 class="font-bold text-lg mb-2">Alles aus einer Hand</h4>
-                        <p class="text-sm text-middle-grey">Ein Ansprechpartner kümmert sich um den gesamten Prozess – von der Planung bis zur Schlüsselübergabe.</p>
+                        <p class="text-sm text-middle-grey">Ein Ansprechpartner kümmert sich um den gesamten Prozess.</p>
                     </div>
                  </div>
                  <div class="mt-20 text-center bg-dark-blue text-white p-12">
@@ -208,7 +213,6 @@
         <section class="fade-in-element py-24 sm:py-32 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
                 <h3 class="text-4xl font-black text-dark-grey sm:text-5xl text-center tracking-tight">Vier Experten. Eine Mission.</h3>
-                <p class="mt-5 text-lg text-middle-grey text-center max-w-3xl mx-auto">Energy Flat Living bündelt die führende Kompetenz aus Energie, Bau, Immobilien und Finanzierung zu einem unschlagbaren Gesamtpaket.</p>
                 <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center items-center">
                     <div class="p-4 flex justify-center items-center h-24">
                         <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-leukefeld.png" alt="Logo Timo Leukefeld" class="partner-logo h-16">
@@ -225,39 +229,10 @@
                 </div>
             </div>
         </section>
-
-        <section class="fade-in-element py-24 sm:py-32 bg-dark-blue text-white">
-            <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
-                <h3 class="text-4xl font-black text-white sm:text-5xl text-center tracking-tight">So sieht die Zukunft aus</h3>
-                <p class="mt-5 text-lg text-gray-300 text-center max-w-3xl mx-auto">In Aschersleben haben wir gezeigt, wie aus einem Abrisskandidaten ein begehrtes, energieautarkes Wohnquartier wird.</p>
-                <div class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/referenz-aschersleben.jpg" alt="Referenzprojekt Aschersleben" class="w-full h-full object-cover">
-                    </div>
-                    <div class="mt-8 lg:mt-0">
-                        <blockquote class="border-l-4 border-green pl-6 text-2xl italic mb-8 font-light">
-                            "Das, was die Bundesregierung 2050 zum Standard machen will, das haben wir jetzt gebaut."
-                        </blockquote>
-                        <div class="grid grid-cols-2 gap-8 text-lg">
-                            <div><span class="block font-bold text-4xl text-curry">22</span> Wohneinheiten</div>
-                            <div><span class="block font-bold text-4xl text-curry">60%</span> Energieautarkie</div>
-                            <div><span class="block font-bold text-4xl text-curry">100%</span> Vermietet</div>
-                            <div><span class="block font-bold text-4xl text-curry">0€</span> CO₂-Steuer</div>
-                        </div>
-                        <div class="mt-12">
-                             <a href="#" class="inline-block bg-transparent border-2 border-white text-white hover:bg-white hover:text-dark-blue font-bold py-3 px-6 uppercase tracking-wider transition-colors">
-                                 Case Study anfordern
-                             </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        
         <section class="fade-in-element py-24 sm:py-32 bg-white">
             <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
                 <h3 class="text-4xl font-black text-dark-grey sm:text-5xl text-center tracking-tight">Häufig gestellte Fragen</h3>
-                <p class="mt-5 text-lg text-middle-grey text-center max-w-3xl mx-auto">Die wichtigsten Antworten auf Ihre Fragen. Für alles Weitere stehen wir Ihnen persönlich zur Verfügung.</p>
                 <div id="faq-container" class="mt-20 space-y-6">
                     <div class="border-b border-gray-200">
                         <button class="flex justify-between items-center w-full text-left font-bold text-xl py-4"><span>Was passiert, wenn wir eine Tiefgarage benötigen?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
@@ -265,15 +240,11 @@
                     </div>
                     <div class="border-b border-gray-200">
                         <button class="flex justify-between items-center w-full text-left font-bold text-xl py-4"><span>Sind auch andere Dachformen als Pultdächer möglich?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
-                        <div class="pb-4 pr-4 text-middle-grey hidden">Ja. Das Pultdach bietet die optimale Fläche für eine maximale Photovoltaik-Ausbeute. Wir können das Konzept aber auch mit anderen Dachformen wie z.B. Satteldächern umsetzen, sofern die örtlichen Gegebenheiten (Ausrichtung, Verschattung) eine Autarkiequote von über 50% zulassen. Dies prüfen wir für jedes Grundstück individuell.</div>
+                        <div class="pb-4 pr-4 text-middle-grey hidden">Ja. Das Pultdach bietet die optimale Fläche für eine maximale Photovoltaik-Ausbeute. Wir können das Konzept aber auch mit anderen Dachformen wie z.B. Satteldächern umsetzen, sofern die örtlichen Gegebenheiten eine Autarkiequote von über 50% zulassen.</div>
                     </div>
                     <div class="border-b border-gray-200">
                         <button class="flex justify-between items-center w-full text-left font-bold text-xl py-4"><span>Wie funktioniert das Erbbaurecht genau?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
-                        <div class="pb-4 pr-4 text-middle-grey hidden">Sie als Eigentümer überlassen uns das Grundstück für einen langen Zeitraum (z.B. 99 Jahre) und erhalten dafür einen jährlichen, indexierten Erbbauzins. Das Grundstück bleibt vollständig in Ihrem Besitz. Wir als Erbbaurechtsnehmer errichten und betreiben das Gebäude auf unsere Kosten und unser Risiko. Es ist eine Win-Win-Situation.</div>
-                    </div>
-                    <div class="border-b border-gray-200">
-                        <button class="flex justify-between items-center w-full text-left font-bold text-xl py-4"><span>Welche Voraussetzungen muss unser Grundstück erfüllen?</span><svg class="w-5 h-5 transform transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></button>
-                        <div class="pb-4 pr-4 text-middle-grey hidden">Idealerweise ist das Grundstück bereits voll erschlossen (Strom, Wasser, Abwasser) und es besteht Baurecht. Dies ermöglicht den schnellstmöglichen Baustart. Zudem sollte es keine extreme Verschattung durch hohe Nachbargebäude oder dichten Baumbestand geben, um die Effizienz der Solaranlage zu gewährleisten.</div>
+                        <div class="pb-4 pr-4 text-middle-grey hidden">Sie als Eigentümer überlassen uns das Grundstück für einen langen Zeitraum (z.B. 99 Jahre) und erhalten dafür einen jährlichen, indexierten Erbbauzins. Das Grundstück bleibt vollständig in Ihrem Besitz.</div>
                     </div>
                 </div>
             </div>
@@ -283,38 +254,63 @@
             <div class="container mx-auto px-4 sm:px-6">
                 <div class="max-w-3xl mx-auto text-center">
                     <h3 class="text-4xl font-black text-dark-grey sm:text-5xl text-center tracking-tight">Lassen Sie uns gemeinsam bezahlbaren Wohnraum schaffen.</h3>
-                    <p class="mt-5 text-lg text-middle-grey text-center max-w-3xl mx-auto">Haben Sie ein passendes Grundstück oder möchten mehr erfahren? Fordern Sie jetzt eine kostenlose und unverbindliche Potenzial-Analyse an.</p>
                 </div>
-                <div class="mt-20 max-w-xl mx-auto">
+                <div class="mt-12 max-w-xl mx-auto">
                     <form action="#" method="POST" class="grid grid-cols-1 gap-y-6">
-                        <div><label for="name" class="sr-only">Name</label><input type="text" name="name" id="name" autocomplete="name" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300" placeholder="Ihr Name"></div>
-                        <div><label for="organization" class="sr-only">Organisation</label><input type="text" name="organization" id="organization" autocomplete="organization" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300" placeholder="Ihre Gemeinde / Ihr Unternehmen"></div>
-                        <div><label for="email" class="sr-only">E-Mail</label><input id="email" name="email" type="email" autocomplete="email" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300" placeholder="E-Mail-Adresse"></div>
-                        <div><label for="phone" class="sr-only">Telefon</label><input type="text" name="phone" id="phone" autocomplete="tel" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300" placeholder="Telefonnummer (optional)"></div>
-                        <div><label for="message" class="sr-only">Nachricht</label><textarea id="message" name="message" rows="4" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border border-gray-300" placeholder="Ihre Nachricht"></textarea></div>
+                        <div><input type="text" name="name" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300" placeholder="Ihr Name"></div>
+                        <div><input type="text" name="organization" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300" placeholder="Ihre Gemeinde / Ihr Unternehmen"></div>
+                        <div><input type="email" name="email" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300" placeholder="E-Mail-Adresse"></div>
                         <div><button type="submit" class="w-full inline-flex items-center justify-center bg-orange hover:bg-opacity-90 text-white font-bold py-4 px-6 uppercase tracking-wider transition-colors">Analyse anfordern</button></div>
                     </form>
-                    <div class="mt-8 text-center text-sm text-middle-grey">
-                        <p>Oder kontaktieren Sie direkt unseren zentralen Ansprechpartner:</p>
-                        <p class="font-semibold mt-1">Sven Keusen | <a href="mailto:efl@rohrer-immobilien.de" class="text-dark-blue hover:underline">efl@rohrer-immobilien.de</a></p>
-                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-dark-grey text-white">
-        <div class="container mx-auto py-8 px-6 text-center text-sm">
-            <p>&copy; 2025 Energy Flat Living. Alle Rechte vorbehalten.</p>
-            <div class="mt-4">
-                <a href="#" class="hover:underline px-3">Impressum</a>
-                <a href="#" class="hover:underline px-3">Datenschutz</a>
+    <footer class="bg-orange text-white">
+        <div class="container mx-auto px-4 sm:px-6 py-16">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-1">
+                    <h4 class="text-3xl font-bold leading-snug">Wir planen, gestalten und realisieren die Zukunft des bezahlbaren Wohnens.</h4>
+                </div>
+                <div class="lg:col-span-1 lg:col-start-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="font-bold mb-4 uppercase tracking-wider">Navigation</h5>
+                            <ul class="space-y-3">
+                                <li><a href="#" class="hover:underline">Lösung</a></li>
+                                <li><a href="#" class="hover:underline">Vorteile</a></li>
+                                <li><a href="#" class="hover:underline">Referenzen</a></li>
+                                <li><a href="#" class="hover:underline">Team</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-4 uppercase tracking-wider">Information</h5>
+                            <ul class="space-y-3">
+                                <li><a href="#" class="hover:underline">FAQ</a></li>
+                                <li><a href="#contact" class="hover:underline">Kontakt</a></li>
+                                <li><a href="#" class="hover:underline">Über Uns</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-t border-white/20 my-12">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm">
+                <div class="flex space-x-6 order-2 md:order-1 mt-6 md:mt-0">
+                    <a href="#" class="hover:underline">Impressum</a>
+                    <a href="#" class="hover:underline">Datenschutz</a>
+                    <a href="#" class="hover:underline">Cookies</a>
+                </div>
+                <div class="order-1 md:order-2">
+                    <p>&copy; 2025 Energy Flat Living</p>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
-      // All JavaScript remains the same, controlling the animations and interactions.
+      // All JavaScript remains the same
       document.addEventListener('DOMContentLoaded', () => {
           const observer = new IntersectionObserver((entries) => {
               entries.forEach(entry => {
