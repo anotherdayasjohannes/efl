@@ -8,14 +8,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Lato', sans-serif;
             color: #333333; /* Dark Grey from CD */
         }
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://storage.googleapis.com/gemini-prod-us-west1-423905-external/vision-queries/27173_1721566085532_Schermafbeelding2024-07-21om14.47.58.png');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/hero.png');
             background-size: cover;
             background-position: center;
         }
@@ -25,11 +25,14 @@
         .section-subtitle {
             @apply mt-4 text-lg text-[#666666] text-center max-w-3xl mx-auto;
         }
+        .tab-button {
+            @apply px-6 py-2 text-sm font-medium rounded-md transition-all duration-300 ease-in-out;
+        }
         .tab-active {
-            @apply bg-white text-[#3c5067]; /* Dark Blue from CD */
+            @apply bg-[#d04227] text-white shadow-lg scale-105; /* Orange from CD */
         }
         .tab-inactive {
-            @apply bg-transparent text-white;
+            @apply bg-black/20 text-white/80 hover:bg-black/40;
         }
         .faq-question {
             @apply flex justify-between items-center w-full text-left font-semibold text-lg py-4;
@@ -60,10 +63,11 @@
             </a>
         </nav>
         <div class="container mx-auto px-6 py-24 text-center">
-            <div class="mb-8 flex justify-center">
-                <div class="flex space-x-1 rounded-lg bg-white/20 p-1 border border-white/30">
-                    <button id="tab-kommunen" class="tab-active px-6 py-2 text-sm font-medium rounded-md transition-all">Für Kommunen</button>
-                    <button id="tab-unternehmen" class="tab-inactive px-6 py-2 text-sm font-medium rounded-md transition-all">Für Unternehmen</button>
+            <div class="mb-8">
+                <p class="mb-3 text-sm uppercase tracking-wider text-white/80">Wählen Sie Ihre Perspektive</p>
+                <div class="inline-flex space-x-2 rounded-lg bg-black/20 p-1 border border-white/30">
+                    <button id="tab-kommunen" class="tab-button">Für Kommunen</button>
+                    <button id="tab-unternehmen" class="tab-button">Für Unternehmen</button>
                 </div>
             </div>
 
@@ -134,7 +138,7 @@
                     <div class="bg-gray-100 p-8 rounded-lg">
                         <h4 class="text-xl font-bold mb-4">Konventionelle Heizung: Teuer & Komplex</h4>
                         <p class="text-[#666666] mb-4">Wassergeführte Systeme erfordern einen enormen Material- und Installationsaufwand. Die Folge: hohe Anfangsinvestitionen und explodierende Wartungskosten durch Fachkräftemangel.</p>
-                        <img src="https://placehold.co/600x400/e2e8f0/334155?text=Kostenentwicklung+Heizungsanlagen" alt="Grafik zur Kostenentwicklung von Heizungsanlagen" class="w-full rounded-lg shadow-md">
+                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/kostenentwicklung.png" alt="Grafik zur Kostenentwicklung von Heizungsanlagen" class="w-full rounded-lg shadow-md">
                     </div>
                     <div class="bg-[#edf4e5] p-8 rounded-lg border-l-4 border-[#78b5a1]">
                         <h4 class="text-xl font-bold text-[#3c5067] mb-4">Unsere Lösung: Effizient & Langlebig</h4>
@@ -185,10 +189,18 @@
                 <h3 class="section-title">Vier Experten. Eine Mission.</h3>
                 <p class="section-subtitle">Energy Flat Living bündelt die führende Kompetenz aus Energie, Bau, Immobilien und Finanzierung zu einem unschlagbaren Gesamtpaket.</p>
                 <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center items-center">
-                    <div class="p-4"><img src="https://placehold.co/200x100/e2e8f0/334155?text=Leukefeld" alt="Logo Timo Leukefeld" class="mx-auto grayscale hover:grayscale-0 transition-all"></div>
-                    <div class="p-4"><img src="https://placehold.co/200x100/e2e8f0/334155?text=3lectrify" alt="Logo 3lectrify" class="mx-auto grayscale hover:grayscale-0 transition-all"></div>
-                    <div class="p-4"><img src="https://placehold.co/200x100/e2e8f0/334155?text=Rohrer" alt="Logo Rohrer Immobilien" class="mx-auto grayscale hover:grayscale-0 transition-all"></div>
-                    <div class="p-4"><img src="https://placehold.co/200x100/e2e8f0/334155?text=Nadeau" alt="Logo Nadeau" class="mx-auto grayscale hover:grayscale-0 transition-all"></div>
+                    <div class="p-4 flex justify-center items-center h-24">
+                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-leukefeld.png" alt="Logo Timo Leukefeld" class="h-16">
+                    </div>
+                    <div class="p-4 flex justify-center items-center h-24">
+                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-3lectrify.svg" alt="Logo 3lectrify" class="h-12">
+                    </div>
+                    <div class="p-4 flex justify-center items-center h-24">
+                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-rohrer.svg" alt="Logo Rohrer Immobilien" class="h-8">
+                    </div>
+                    <div class="p-4 flex justify-center items-center h-24">
+                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-nanebau.svg" alt="Logo Nane Bau" class="h-16">
+                    </div>
                 </div>
             </div>
         </section>
@@ -201,7 +213,7 @@
                 <div class="mt-12 grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl">
-                            <img src="https://placehold.co/1600x900/334155/ffffff?text=Video+Referenzprojekt" alt="Referenzprojekt Aschersleben" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/334155/ffffff?text=Bild+nicht+verfügbar';">
+                            <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/referenz-aschersleben.jpg" alt="Referenzprojekt Aschersleben" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/334155/ffffff?text=Bild+nicht+verfügbar';">
                         </div>
                     </div>
                     <div>
@@ -230,7 +242,7 @@
                 <h3 class="section-title">Ein Gewinn für die Gesellschaft</h3>
                 <p class="section-subtitle">Unser Modell ist mehr als nur wirtschaftlich. Es leistet einen messbaren Beitrag zu den wichtigsten Nachhaltigkeitszielen der Vereinten Nationen (SDGs) und schafft positiven sozialen Wandel.</p>
                 <div class="mt-12">
-                    <img src="https://placehold.co/1200x600/e2e8f0/334155?text=Grafik+Sustainable+Development+Goals+(SDG)" alt="Grafik, die den Beitrag zu den SDGs zeigt" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg">
+                    <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/sdg-grafik.png" alt="Grafik, die den Beitrag zu den SDGs zeigt" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg">
                 </div>
             </div>
         </section>
@@ -244,7 +256,7 @@
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h4 class="text-xl font-bold mb-4">Beispiel-Grundriss</h4>
                         <p class="text-[#666666] mb-4">Effiziente und helle Grundrisse mit ca. 70m² pro Wohnung, ideal für Singles, Paare und kleine Familien.</p>
-                        <img src="https://placehold.co/800x600/e2e8f0/334155?text=Beispiel-Grundriss" alt="Grundriss eines Beispielgebäudes" class="w-full rounded-lg border">
+                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/grundriss.png" alt="Grundriss eines Beispielgebäudes" class="w-full rounded-lg border">
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h4 class="text-xl font-bold mb-4">Beispiel-Kalkulation</h4>
@@ -334,11 +346,11 @@
             const content = {
                 kommunen: {
                     headline: "Bezahlbarer Wohnraum für Ihre Gemeinde. <br class='hidden md:inline'>Realisiert in Rekordzeit.",
-                    subHeadline: "Das Energy Flat Living Modell: Die Antwort auf die Wohnungsnot – mit einer garantierten Warmmiete von <strong class=\"text-[#fdebd6]\">12,50 €/m²</strong>."
+                    subHeadline: 'Das Energy Flat Living Modell: Die Antwort auf die Wohnungsnot – mit einer garantierten Warmmiete von <strong class="text-[#fdebd6]">12,50 €/m²</strong>.'
                 },
                 unternehmen: {
                     headline: "Fachkräfte gewinnen und binden. <br class='hidden md:inline'>Mit bezahlbaren Werkswohnungen.",
-                    subHeadline: "Das Energy Flat Living Modell: Ihr entscheidender Vorteil im Wettbewerb um die besten Köpfe – nachhaltig und kosteneffizient."
+                    subHeadline: 'Das Energy Flat Living Modell: Ihr entscheidender Vorteil im Wettbewerb um die besten Köpfe – nachhaltig und kosteneffizient.'
                 }
             };
 
