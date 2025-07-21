@@ -43,11 +43,11 @@
 
         /* --- Glassmorphism Effect --- */
         .glass-pane {
-            background: rgba(25, 35, 45, 0.4); /* Dark semi-transparent background */
-            -webkit-backdrop-filter: blur(12px); /* Frosted glass effect for Safari */
-            backdrop-filter: blur(12px); /* Frosted glass effect */
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Soft shadow for depth */
+            background: rgba(25, 35, 45, 0.4);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
         
         .tab-button {
@@ -55,7 +55,7 @@
         }
 
         .tab-active {
-            background-color: #d04227; /* brand-primary */
+            background-color: #d04227;
             color: white;
             transform: scale(1.05);
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -69,13 +69,32 @@
              background-color: rgba(0, 0, 0, 0.4);
         }
         
-        /* --- Card Hover Effect --- */
         .advantage-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .advantage-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        
+        /* --- Interactive Partner Logos --- */
+        .partner-logo {
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%);
+        }
+
+        /* --- Fade-in on Scroll Animation --- */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
     </style>
@@ -110,7 +129,7 @@
     </header>
 
     <main>
-        <section class="py-20 sm:py-24 bg-white">
+        <section class="fade-in-element py-20 sm:py-24 bg-white">
             <div class="container mx-auto px-4 sm:px-6">
                 <h3 class="text-4xl font-black text-dark sm:text-5xl text-center tracking-tight">Zwei Krisen. Eine Lösung.</h3>
                 <p class="mt-4 text-lg text-smoke text-center max-w-3xl mx-auto">Ob Wohnungsnot in den Gemeinden oder Fachkräftemangel in den Unternehmen – herkömmliche Lösungen sind zu langsam, zu teuer und zu kompliziert. Es ist Zeit für einen neuen Weg.</p>
@@ -127,7 +146,7 @@
             </div>
         </section>
 
-        <section class="py-20 sm:py-24">
+        <section class="fade-in-element py-20 sm:py-24">
             <div class="container mx-auto px-4 sm:px-6">
                 <h3 class="text-4xl font-black text-dark sm:text-5xl text-center tracking-tight">Unsere Lösung in drei einfachen Schritten</h3>
                 <p class="mt-4 text-lg text-smoke text-center max-w-3xl mx-auto">Wir haben den Prozess radikal vereinfacht. So schaffen wir gemeinsam in Rekordzeit bezahlbaren Wohnraum.</p>
@@ -157,7 +176,7 @@
             </div>
         </section>
         
-        <section class="py-20 sm:py-24 bg-white">
+        <section class="fade-in-element py-20 sm:py-24 bg-white">
             <div class="container mx-auto px-4 sm:px-6">
                 <h3 class="text-4xl font-black text-dark sm:text-5xl text-center tracking-tight">Der wirtschaftliche Hebel: Kabel statt Rohre</h3>
                 <p class="mt-4 text-lg text-smoke text-center max-w-3xl mx-auto">Herkömmliche Heizsysteme verursachen bis zu 18% der reinen Baukosten. Wir ersetzen komplexe Rohrleitungen durch eine smarte, wartungsfreie und kosteneffiziente elektrische Lösung.</p>
@@ -181,7 +200,7 @@
             </div>
         </section>
 
-        <section class="py-20 sm:py-24">
+        <section class="fade-in-element py-20 sm:py-24">
             <div class="container mx-auto px-4 sm:px-6">
                  <h3 class="text-4xl font-black text-dark sm:text-5xl text-center tracking-tight">Ihre Vorteile auf einen Blick</h3>
                  <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -209,7 +228,133 @@
             </div>
         </section>
 
-        </main>
+        <section class="fade-in-element py-20 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h3 class="text-4xl font-black text-dark sm:text-5xl text-center tracking-tight">Vier Experten. Eine Mission.</h3>
+                <p class="mt-4 text-lg text-smoke text-center max-w-3xl mx-auto">Energy Flat Living bündelt die führende Kompetenz aus Energie, Bau, Immobilien und Finanzierung zu einem unschlagbaren Gesamtpaket.</p>
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center items-center">
+                    <div class="p-4 flex justify-center items-center h-24">
+                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-leukefeld.png" alt="Logo Timo Leukefeld" class="partner-logo h-16">
+                    </div>
+                    <div class="p-4 flex justify-center items-center h-24">
+                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-3lectrify.svg" alt="Logo 3lectrify" class="partner-logo h-12">
+                    </div>
+                    <div class="p-4 flex justify-center items-center h-24">
+                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-rohrer.svg" alt="Logo Rohrer Immobilien" class="partner-logo h-8">
+                    </div>
+                    <div class="p-4 flex justify-center items-center h-24">
+                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-nanebau.svg" alt="Logo Nane Bau" class="partner-logo h-16">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    </body>
+        <section class="fade-in-element py-20 sm:py-24 bg-navy text-white">
+            </section>
+        
+        <section class="fade-in-element py-20 sm:py-24 bg-white">
+            </section>
+
+        <section class="fade-in-element py-20 sm:py-24">
+            </section>
+        
+        <section class="fade-in-element py-20 sm:py-24 bg-white">
+           </section>
+
+        <section id="contact" class="fade-in-element py-20 sm:py-24 bg-gray-100">
+            </section>
+
+    </main>
+
+    <footer class="bg-dark text-white">
+        <div class="container mx-auto py-6 px-6 text-center text-sm">
+            <p>&copy; 2025 Energy Flat Living. Alle Rechte vorbehalten.</p>
+            <div class="mt-2">
+                <a href="#" class="hover:underline px-2">Impressum</a>
+                <a href="#" class="hover:underline px-2">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ... (Tab-Switcher und FAQ-Accordion-Logik bleibt gleich) ...
+
+            // --- NEU: Intersection Observer für Fade-in-Animation ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger-Punkt, bei 10% Sichtbarkeit
+            });
+
+            // Alle Elemente mit der Klasse .fade-in-element beobachten
+            const targets = document.querySelectorAll('.fade-in-element');
+            targets.forEach(target => {
+                observer.observe(target);
+            });
+
+
+            // Bestehender Code für Tabs und FAQ
+            const tabKommunen = document.getElementById('tab-kommunen');
+            const tabUnternehmen = document.getElementById('tab-unternehmen');
+            const headline = document.getElementById('headline');
+            const subHeadline = document.getElementById('sub-headline');
+
+            const content = {
+                kommunen: {
+                    headline: "Bezahlbarer Wohnraum für Ihre Gemeinde. <br class='hidden md:inline'>Realisiert in Rekordzeit.",
+                    subHeadline: 'Das Energy Flat Living Modell: Die Antwort auf die Wohnungsnot – mit einer garantierten Warmmiete von <strong class="text-brand-accent">12,50 €/m²</strong>.'
+                },
+                unternehmen: {
+                    headline: "Fachkräfte gewinnen und binden. <br class='hidden md:inline'>Mit bezahlbaren Werkswohnungen.",
+                    subHeadline: 'Das Energy Flat Living Modell: Ihr entscheidender Vorteil im Wettbewerb um die besten Köpfe – nachhaltig und kosteneffizient.'
+                }
+            };
+
+            function switchTab(selectedTab) {
+                headline.style.opacity = 0;
+                subHeadline.style.opacity = 0;
+                setTimeout(() => {
+                    const data = content[selectedTab];
+                    headline.innerHTML = data.headline;
+                    subHeadline.innerHTML = data.subHeadline;
+                    
+                    if (selectedTab === 'kommunen') {
+                        tabKommunen.classList.add('tab-active');
+                        tabKommunen.classList.remove('tab-inactive');
+                        tabUnternehmen.classList.add('tab-inactive');
+                        tabUnternehmen.classList.remove('tab-active');
+                    } else {
+                        tabUnternehmen.classList.add('tab-active');
+                        tabUnternehmen.classList.remove('tab-inactive');
+                        tabKommunen.classList.add('tab-inactive');
+                        tabKommunen.classList.remove('tab-active');
+                    }
+                    headline.style.opacity = 1;
+                    subHeadline.style.opacity = 1;
+                }, 300);
+            }
+
+            if(tabKommunen && tabUnternehmen) {
+                tabKommunen.addEventListener('click', () => switchTab('kommunen'));
+                tabUnternehmen.addEventListener('click', () => switchTab('unternehmen'));
+                switchTab('kommunen');
+            }
+
+            document.querySelectorAll('#faq-container button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const answer = button.nextElementSibling;
+                    const icon = button.querySelector('svg');
+                    if (answer) answer.classList.toggle('hidden');
+                    if (icon) icon.classList.toggle('rotate-180');
+                });
+            });
+        });
+    </script>
+
+</body>
 </html>
