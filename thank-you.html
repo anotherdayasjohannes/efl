@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danke! | Energy Flat Living</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        orange: '#d04227',
+                        'dark-grey': '#333333',
+                        'middle-grey': '#666666',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen">
+    <div class="text-center p-8 bg-white shadow-lg max-w-lg mx-auto">
+        <h1 class="text-4xl font-black text-dark-grey tracking-tight">Vielen Dank!</h1>
+        <p class="mt-4 text-lg text-middle-grey">Ihre Anfrage wurde erfolgreich übermittelt. Wir werden uns so schnell wie möglich bei Ihnen melden.</p>
+        <a href="/" class="mt-8 inline-block bg-orange hover:bg-opacity-90 text-white font-bold py-3 px-8 uppercase tracking-wider">
+            Zurück zur Startseite
+        </a>
+    </div>
+</body>
+</html>
