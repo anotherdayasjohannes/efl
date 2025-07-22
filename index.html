@@ -46,7 +46,7 @@
         }
 
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/hero.png');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('media/hero.png');
             background-size: cover;
             background-position: center;
         }
@@ -80,14 +80,6 @@
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
         
-        .partner-logo {
-            filter: grayscale(100%);
-            transition: filter 0.3s ease;
-        }
-        .partner-logo:hover {
-            filter: grayscale(0%);
-        }
-
         .fade-in-element {
             opacity: 0;
             transform: translateY(20px);
@@ -190,7 +182,7 @@
                     <div class="bg-gray-100 p-8">
                         <h4 class="text-2xl font-bold text-dark-blue mb-4">Konventionelle Heizung: Teuer & Komplex</h4>
                         <p class="text-middle-grey mb-4">Wassergeführte Systeme erfordern einen enormen Material- und Installationsaufwand. Die Folge: hohe Anfangsinvestitionen und explodierende Wartungskosten.</p>
-                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/kostenentwicklung.png" alt="Grafik zur Kostenentwicklung von Heizungsanlagen" class="enlargeable-image cursor-pointer w-full shadow-md">
+                        <img src="media/kostenentwicklung.png" alt="Grafik zur Kostenentwicklung von Heizungsanlagen" class="enlargeable-image cursor-pointer w-full shadow-md">
                     </div>
                     <div class="bg-supportive-green p-8 border-l-4 border-green">
                         <h4 class="text-2xl font-bold text-dark-blue mb-4">Unsere Lösung: Effizient & Langlebig</h4>
@@ -239,13 +231,33 @@
         </section>
 
         <section class="fade-in-element py-24 sm:py-32 bg-white">
-            <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
-                <h3 class="text-4xl font-black text-dark-grey sm:text-5xl text-center tracking-tight">Vier Experten. Eine Mission.</h3>
-                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center items-center">
-                    <div class="p-4 flex justify-center items-center h-24"><img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-leukefeld.png" alt="Logo Timo Leukefeld" class="partner-logo h-16"></div>
-                    <div class="p-4 flex justify-center items-center h-24"><img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-3lectrify.svg" alt="Logo 3lectrify" class="partner-logo h-12"></div>
-                    <div class="p-4 flex justify-center items-center h-24"><img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-rohrer.svg" alt="Logo Rohrer Immobilien" class="partner-logo h-8"></div>
-                    <div class="p-4 flex justify-center items-center h-24"><img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/logo-nanebau.svg" alt="Logo Nane Bau" class="partner-logo h-16"></div>
+            <div class="container mx-auto px-4 sm:px-6 max-w-5xl text-center">
+                <h3 class="text-4xl font-black text-dark-grey sm:text-5xl tracking-tight">Vier Experten. Eine Mission.</h3>
+                <p class="mt-5 text-lg text-middle-grey max-w-3xl mx-auto">Energy Flat Living bündelt die führende Kompetenz aus Energie, Bau, Immobilien und Finanzierung zu einem unschlagbaren Gesamtpaket.</p>
+                <div class="mt-12 mb-12">
+                    <img src="media/team.jpg" alt="Das Team des Joint Ventures: Alan Luksic, Sven Keussen, Lars Keussen, Timo Leukefeld" class="enlargeable-image cursor-pointer w-full shadow-xl">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <img src="media/logo-nanebau.svg" alt="Nane Bau Logo" class="h-8 mx-auto mb-4">
+                        <p class="font-bold">Alan Luksic</p>
+                        <p class="text-sm text-middle-grey">Nane Bau</p>
+                    </div>
+                    <div>
+                        <img src="media/logo-rohrer.svg" alt="Rohrer Immobilien Logo" class="h-8 mx-auto mb-4">
+                        <p class="font-bold">Sven Keussen</p>
+                        <p class="text-sm text-middle-grey">Rohrer Immobilien</p>
+                    </div>
+                    <div>
+                        <img src="media/logo-3lectrify.svg" alt="3lectrify Logo" class="h-8 mx-auto mb-4">
+                        <p class="font-bold">Lars Keussen</p>
+                        <p class="text-sm text-middle-grey">3lectrify</p>
+                    </div>
+                    <div>
+                        <img src="media/logo-leukefeld.png" alt="Timo Leukefeld Logo" class="h-10 mx-auto mb-4">
+                        <p class="font-bold">Timo Leukefeld</p>
+                        <p class="text-sm text-middle-grey">Timo Leukefeld</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -256,7 +268,7 @@
                 <p class="mt-5 text-lg text-gray-300 text-center max-w-3xl mx-auto">In Aschersleben haben wir gezeigt, wie aus einem Abrisskandidaten ein begehrtes, energieautarkes Wohnquartier wird.</p>
                 <div class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
-                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/referenz-aschersleben.jpg" alt="Referenzprojekt Aschersleben" class="enlargeable-image cursor-pointer w-full h-full object-cover shadow-xl">
+                        <img src="media/referenz-aschersleben.jpg" alt="Referenzprojekt Aschersleben" class="enlargeable-image cursor-pointer w-full h-full object-cover shadow-xl">
                     </div>
                     <div class="mt-8 lg:mt-0">
                         <blockquote class="border-l-4 border-green pl-6 text-2xl italic mb-8 font-light">
@@ -278,7 +290,7 @@
                 <h3 class="text-4xl font-black text-dark-grey sm:text-5xl tracking-tight">Ein Gewinn für die Gesellschaft</h3>
                 <p class="mt-5 text-lg text-middle-grey max-w-3xl mx-auto">Unser Modell ist mehr als nur wirtschaftlich. Es leistet einen messbaren Beitrag zu den wichtigsten Nachhaltigkeitszielen der Vereinten Nationen (SDGs).</p>
                 <div class="mt-20">
-                    <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/sdg-grafik.png" alt="Grafik, die den Beitrag zu den SDGs zeigt" class="enlargeable-image cursor-pointer w-full mx-auto shadow-lg">
+                    <img src="media/sdg-grafik.png" alt="Grafik, die den Beitrag zu den SDGs zeigt" class="enlargeable-image cursor-pointer w-full mx-auto shadow-lg">
                 </div>
             </div>
         </section>
@@ -289,7 +301,7 @@
                 <div class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     <div class="bg-white p-8 border border-gray-200">
                         <h4 class="text-2xl font-bold text-dark-blue mb-4">Beispiel-Grundriss</h4>
-                        <img src="https://raw.githubusercontent.com/anotherdayasjohannes/efl/main/media/grundriss.png" alt="Grundriss eines Beispielgebäudes" class="enlargeable-image cursor-pointer w-full border">
+                        <img src="media/grundriss.png" alt="Grundriss eines Beispielgebäudes" class="enlargeable-image cursor-pointer w-full border">
                     </div>
                     <div class="bg-white p-8 border border-gray-200">
                         <h4 class="text-2xl font-bold text-dark-blue mb-4">Beispiel-Kalkulation</h4>
