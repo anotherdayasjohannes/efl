@@ -1,0 +1,5 @@
+# Ignoriert den Ordner mit allen installierten Paketen
+node_modules
+
+# Ignoriert den Ordner mit der fertig gebauten Webseite
+_site
