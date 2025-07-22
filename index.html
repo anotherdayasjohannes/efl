@@ -409,13 +409,15 @@
             <div class="container mx-auto px-4 sm:px-6">
                 <div class="max-w-3xl mx-auto text-center">
                     <h3 class="text-4xl font-black text-dark-grey sm:text-5xl text-center tracking-tight">Lassen Sie uns gemeinsam bezahlbaren Wohnraum schaffen.</h3>
+                    <p class="mt-4 text-sm text-middle-grey">* Pflichtfeld</p>
                 </div>
-                <div class="mt-12 max-w-xl mx-auto">
-                 <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" class="grid grid-cols-1 gap-y-6">
-                        <div><input type="text" name="name" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300 rounded-md" placeholder="Ihr Name"></div>
-                        <div><input type="text" name="organization" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300 rounded-md" placeholder="Ihre Gemeinde / Ihr Unternehmen"></div>
-                        <div><input type="email" name="email" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300 rounded-md" placeholder="E-Mail-Adresse"></div>
-                        <div><button type="submit" class="w-full inline-flex items-center justify-center bg-orange hover:bg-opacity-90 text-white font-bold py-4 px-6 uppercase tracking-wider transition-colors rounded-md">Analyse anfordern</button></div>
+                <div class="mt-8 max-w-xl mx-auto">
+                    <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" class="grid grid-cols-1 gap-y-6">
+                        <div><input type="text" name="name" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300 rounded-md" placeholder="Ihr Name *" required></div>
+                        <div><input type="text" name="organization" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300 rounded-md" placeholder="Ihre Gemeinde / Ihr Unternehmen *"></div>
+                        <div><input type="email" name="email" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300 rounded-md" placeholder="E-Mail-Adresse *" required></div>
+                        <div><textarea name="message" rows="4" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-orange focus:border-orange border-gray-300 rounded-md" placeholder="Ihre Nachricht (optional)"></textarea></div>
+                        <div><button type="submit" class="w-full inline-flex items-center justify-center bg-orange hover:bg-opacity-90 text-white font-bold py-4 px-6 uppercase tracking-wider transition-colors rounded-md">Anfrage abschicken</button></div>
                     </form>
                 </div>
             </div>
@@ -567,13 +569,10 @@
 
           window.addEventListener('scroll', () => {
               if (window.scrollY > 300 && window.scrollY > lastScrollY) {
-                  // Scrolling Down
                   stickyHeader.classList.remove('is-visible');
               } else if (window.scrollY > 300 && window.scrollY < lastScrollY) {
-                  // Scrolling Up
                   stickyHeader.classList.add('is-visible');
               } else if (window.scrollY <= 300) {
-                  // Back at the top
                   stickyHeader.classList.remove('is-visible');
               }
               lastScrollY = window.scrollY <= 0 ? 0 : window.scrollY;
