@@ -80,6 +80,14 @@
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
         
+        .partner-logo {
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%);
+        }
+
         .fade-in-element {
             opacity: 0;
             transform: translateY(20px);
@@ -148,7 +156,7 @@
             </div>
         </section>
 
-        <section class="fade-in-element py-24 sm:py-32 bg-gray-50">
+        <section id="loesung" class="fade-in-element py-24 sm:py-32 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
                 <div class="text-center max-w-3xl mx-auto">
                     <h3 class="text-4xl font-black text-dark-grey sm:text-5xl tracking-tight">Unsere Lösung in drei einfachen Schritten</h3>
@@ -196,7 +204,7 @@
             </div>
         </section>
 
-        <section class="fade-in-element py-24 sm:py-32 bg-gray-50">
+        <section id="vorteile" class="fade-in-element py-24 sm:py-32 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
                 <div class="text-center max-w-3xl mx-auto">
                     <h3 class="text-4xl font-black text-dark-grey sm:text-5xl tracking-tight">Ihre Vorteile auf einen Blick</h3>
@@ -230,7 +238,7 @@
             </div>
         </section>
 
-        <section class="fade-in-element py-24 sm:py-32 bg-white">
+        <section id="team" class="fade-in-element py-24 sm:py-32 bg-white">
             <div class="container mx-auto px-4 sm:px-6 max-w-5xl text-center">
                 <h3 class="text-4xl font-black text-dark-grey sm:text-5xl tracking-tight">Vier Experten. Eine Mission.</h3>
                 <p class="mt-5 text-lg text-middle-grey max-w-3xl mx-auto">Energy Flat Living bündelt die führende Kompetenz aus Energie, Bau, Immobilien und Finanzierung zu einem unschlagbaren Gesamtpaket.</p>
@@ -239,30 +247,22 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                     <div>
-                        <div class="h-16 flex justify-center items-center mb-4">
-                           <img src="media/logo-nanebau.svg" alt="Nane Bau Logo" class="max-h-8">
-                        </div>
+                        <div class="h-16 flex justify-center items-center mb-4"><img src="media/logo-nanebau.svg" alt="Nane Bau Logo" class="max-h-8"></div>
                         <p class="font-bold">Alan Luksic</p>
                         <p class="text-sm text-middle-grey">Nane Bau</p>
                     </div>
                     <div>
-                        <div class="h-16 flex justify-center items-center mb-4">
-                           <img src="media/logo-rohrer.svg" alt="Rohrer Immobilien Logo" class="max-h-8">
-                        </div>
+                        <div class="h-16 flex justify-center items-center mb-4"><img src="media/logo-rohrer.svg" alt="Rohrer Immobilien Logo" class="max-h-8"></div>
                         <p class="font-bold">Sven Keussen</p>
                         <p class="text-sm text-middle-grey">Rohrer Immobilien</p>
                     </div>
                     <div>
-                        <div class="h-16 flex justify-center items-center mb-4">
-                           <img src="media/logo-3lectrify.svg" alt="3lectrify Logo" class="max-h-8">
-                        </div>
+                        <div class="h-16 flex justify-center items-center mb-4"><img src="media/logo-3lectrify.svg" alt="3lectrify Logo" class="max-h-8"></div>
                         <p class="font-bold">Lars Keussen</p>
                         <p class="text-sm text-middle-grey">3lectrify</p>
                     </div>
                     <div>
-                        <div class="h-16 flex justify-center items-center mb-4">
-                           <img src="media/logo-leukefeld.png" alt="Timo Leukefeld Logo" class="max-h-12">
-                        </div>
+                        <div class="h-16 flex justify-center items-center mb-4"><img src="media/logo-leukefeld.png" alt="Timo Leukefeld Logo" class="max-h-12"></div>
                         <p class="font-bold">Timo Leukefeld</p>
                         <p class="text-sm text-middle-grey">Timo Leukefeld</p>
                     </div>
@@ -270,7 +270,7 @@
             </div>
         </section>
 
-        <section class="fade-in-element py-24 sm:py-32 bg-dark-blue text-white">
+        <section id="referenzen" class="fade-in-element py-24 sm:py-32 bg-dark-blue text-white">
             <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
                 <h3 class="text-4xl font-black text-white sm:text-5xl text-center tracking-tight">So sieht die Zukunft aus</h3>
                 <p class="mt-5 text-lg text-gray-300 text-center max-w-3xl mx-auto">In Aschersleben haben wir gezeigt, wie aus einem Abrisskandidaten ein begehrtes, energieautarkes Wohnquartier wird.</p>
@@ -324,7 +324,7 @@
             </div>
         </section>
 
-        <section class="fade-in-element py-24 sm:py-32 bg-white">
+        <section id="faq" class="fade-in-element py-24 sm:py-32 bg-white">
             <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
                 <h3 class="text-4xl font-black text-dark-grey sm:text-5xl text-center tracking-tight">Häufig gestellte Fragen</h3>
                 <div id="faq-container" class="mt-20 space-y-6">
@@ -376,18 +376,18 @@
                         <div>
                             <h5 class="font-bold mb-4 uppercase tracking-wider">Navigation</h5>
                             <ul class="space-y-3">
-                                <li><a href="#" class="hover:underline">Lösung</a></li>
-                                <li><a href="#" class="hover:underline">Vorteile</a></li>
-                                <li><a href="#" class="hover:underline">Referenzen</a></li>
-                                <li><a href="#" class="hover:underline">Team</a></li>
+                                <li><a href="#loesung" class="hover:underline">Lösung</a></li>
+                                <li><a href="#vorteile" class="hover:underline">Vorteile</a></li>
+                                <li><a href="#referenzen" class="hover:underline">Referenzen</a></li>
+                                <li><a href="#team" class="hover:underline">Team</a></li>
                             </ul>
                         </div>
                         <div>
                             <h5 class="font-bold mb-4 uppercase tracking-wider">Information</h5>
                             <ul class="space-y-3">
-                                <li><a href="#" class="hover:underline">FAQ</a></li>
+                                <li><a href="#faq" class="hover:underline">FAQ</a></li>
                                 <li><a href="#contact" class="hover:underline">Kontakt</a></li>
-                                <li><a href="#" class="hover:underline">Über Uns</a></li>
+                                <li><a href="#team" class="hover:underline">Über Uns</a></li>
                             </ul>
                         </div>
                     </div>
