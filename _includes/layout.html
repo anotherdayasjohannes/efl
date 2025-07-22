@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} | Energy Flat Living</title>
+    <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/bc8a5f7fb2f55b3d7c0a5035/script.js"></script> <!-- End cookieyes banner -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,9 +123,9 @@
 
           const tabKommunen = document.getElementById('tab-kommunen');
           const tabUnternehmen = document.getElementById('tab-unternehmen');
-          const headline = document.getElementById('headline');
-          const subHeadline = document.getElementById('sub-headline');
-          if (tabKommunen && tabUnternehmen) {
+          if (tabKommunen) {
+              const headline = document.getElementById('headline');
+              const subHeadline = document.getElementById('sub-headline');
               const content = {
                   kommunen: {
                       headline: "Bezahlbarer Wohnraum für Ihre Gemeinde. <br class='hidden md:inline'>Realisiert in Rekordzeit.",
@@ -172,40 +173,46 @@
           });
 
           const modal = document.getElementById('imageModal');
-          const modalImage = document.getElementById('modalImage');
-          const closeModalBtn = document.getElementById('closeModal');
-          const imagesToEnlarge = document.querySelectorAll('.enlargeable-image');
-
-          imagesToEnlarge.forEach(image => {
-              image.addEventListener('click', () => {
-                  modalImage.src = image.src;
-                  modal.classList.remove('hidden');
-                  setTimeout(() => modal.classList.remove('opacity-0'), 20);
+          if (modal) {
+              const modalImage = document.getElementById('modalImage');
+              const closeModalBtn = document.getElementById('closeModal');
+              const imagesToEnlarge = document.querySelectorAll('.enlargeable-image');
+              imagesToEnlarge.forEach(image => {
+                  image.addEventListener('click', () => {
+                      modalImage.src = image.src;
+                      modal.classList.remove('hidden');
+                      setTimeout(() => modal.classList.remove('opacity-0'), 20);
+                  });
               });
-          });
-
-          function closeModal() {
-              modal.classList.add('opacity-0');
-              setTimeout(() => modal.classList.add('hidden'), 250);
-          }
-
-          closeModalBtn.addEventListener('click', closeModal);
-          modal.addEventListener('click', (e) => {
-              if (e.target === modal) {
-                  closeModal();
+              function closeModal() {
+                  modal.classList.add('opacity-0');
+                  setTimeout(() => modal.classList.add('hidden'), 250);
               }
-          });
+              closeModalBtn.addEventListener('click', closeModal);
+              modal.addEventListener('click', (e) => {
+                  if (e.target === modal) {
+                      closeModal();
+                  }
+              });
+          }
 
           const stickyHeader = document.getElementById('sticky-header');
           let lastScrollY = window.scrollY;
 
+          // NEU: Prüfen, ob die Seite kurz ist, und Header direkt einblenden
+          if (document.body.scrollHeight <= window.innerHeight) {
+              stickyHeader.classList.add('is-visible');
+          }
+
           window.addEventListener('scroll', () => {
-              if (window.scrollY > 300 && window.scrollY > lastScrollY) {
-                  stickyHeader.classList.remove('is-visible');
-              } else if (window.scrollY > 300 && window.scrollY < lastScrollY) {
-                  stickyHeader.classList.add('is-visible');
-              } else if (window.scrollY <= 300) {
-                  stickyHeader.classList.remove('is-visible');
+              if (document.body.scrollHeight > window.innerHeight) { // Scroll-Logik nur für lange Seiten
+                  if (window.scrollY > 300 && window.scrollY > lastScrollY) {
+                      stickyHeader.classList.remove('is-visible');
+                  } else if (window.scrollY > 300 && window.scrollY < lastScrollY) {
+                      stickyHeader.classList.add('is-visible');
+                  } else if (window.scrollY <= 300) {
+                      stickyHeader.classList.remove('is-visible');
+                  }
               }
               lastScrollY = window.scrollY <= 0 ? 0 : window.scrollY;
           });
