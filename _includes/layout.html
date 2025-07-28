@@ -28,6 +28,27 @@
             }
         }
     </script>
+    
+    <link rel="dns-prefetch" href="//app.usercentrics.eu" />
+<link rel="dns-prefetch" href="//api.usercentrics.eu" />
+<link rel="preconnect" href="//privacy-proxy.usercentrics.eu">
+<link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script">
+<script id="usercentrics-cmp" data-eu-mode="true" data-settings-id="e1rgpZv6Cwbg76" src="https://app.eu.usercentrics.eu/browser-ui/latest/loader.js" async></script>
+<script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+// Set default consent to 'denied'
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied',
+  wait_for_update: 500 // milliseconds to wait for update from the CMP
+});
+</script>
+<script type="text/javascript">uc.deactivateBlocking(['BJ59EidsWQ', /* GTM template ID */]);</script>
+
     <style>
         body { font-family: 'Inter', sans-serif; color: #333333; line-height: 1.6; }
         .hero-bg { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/hero.png'); background-size: cover; background-position: center; }
