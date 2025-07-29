@@ -1,116 +1,144 @@
-<!-- ================================================================================================== -->
-
-<!-- DATEI: index.html (FINALE, SAUBERE VERSION) -->
+<!-- DATEI: index.html (FINALE, STABILE VERSION) -->
 ---
 title: "Energy Flat Living | Ihr Zuhause als Kraftwerk"
 layout: "layout.html"
 ---
 
-<!-- ============== BUILDER.IO KOMPONENTE ============== -->
-<!-- Die 'builder-component' umschließt wieder den gesamten Inhalt. -->
-<!-- 'prerender="false"' ist die Lösung für den "attachShadow"-Fehler. -->
-<builder-component model="page" api-key="26c0f13841904618ba9643bccfe1de7f" prerender="false">
-    <!-- Dieser Inhalt dient als Fallback und wird angezeigt, wenn Builder.io keine Inhalte findet. -->
-    <div class="relative text-white">
-        <img src="/media/hero.png" alt="Modernes Mehrfamilienhaus" class="w-full h-[60vh] object-cover">
-        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center p-6">
-            <h1 class="text-4xl md:text-6xl font-bold font-montserrat">Ihr Zuhause als Kraftwerk</h1>
-            <p class="mt-4 text-lg md:text-2xl max-w-3xl">Energiekosten-Flatrate inklusive: Wir kombinieren Photovoltaik, Speicher und intelligente Gebäudetechnik zu einem revolutionären Mietmodell.</p>
-        </div>
-    </div>
+<!-- Dieser Div ist der Container, in den der Inhalt geladen wird. -->
+<div id="builder-content-wrapper"></div>
 
-    <section id="konzept" class="py-16 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12 font-montserrat">Ein Konzept, das überzeugt</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 border border-gray-200 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-bold mb-2 font-montserrat">Radikale Vereinfachung</h3>
-                    <p>Keine komplizierten Abrechnungen mehr. Eine Pauschalmiete deckt Wohnen, Heizen, Strom und E-Mobilität ab. Einfach, transparent und fair.</p>
-                </div>
-                <div class="p-6 border border-gray-200 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-bold mb-2 font-montserrat">Kosten senken</h3>
-                    <p>Durch die eigene Energieerzeugung und den Wegfall teurer Messtechnik und Verwaltung senken wir die "zweite Miete" nachhaltig.</p>
-                </div>
-                <div class="p-6 border border-gray-200 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-bold mb-2 font-montserrat">CO2 Freiheit</h3>
-                    <p>Unsere Gebäude sind nahezu CO2-neutral und machen Sie unabhängig von steigenden Energiepreisen am Weltmarkt.</p>
-                </div>
+<script>
+    // Der ursprüngliche HTML-Inhalt als Fallback, falls Builder.io nicht lädt.
+    const fallbackContent = `
+        <div class="relative text-white">
+            <img src="/media/hero.png" alt="Modernes Mehrfamilienhaus" class="w-full h-[60vh] object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center p-6">
+                <h1 class="text-4xl md:text-6xl font-bold font-montserrat">Ihr Zuhause als Kraftwerk</h1>
+                <p class="mt-4 text-lg md:text-2xl max-w-3xl">Energiekosten-Flatrate inklusive: Wir kombinieren Photovoltaik, Speicher und intelligente Gebäudetechnik zu einem revolutionären Mietmodell.</p>
             </div>
         </div>
-    </section>
 
-    <section id="vorteile" class="py-16">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6 font-montserrat">Vorteile für alle</h2>
-                    <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-2 text-red-600">Für Mieter:</h3>
-                        <ul class="list-disc list-inside space-y-1">
-                            <li>Absolute Kostensicherheit durch Energie-Flatrate</li>
-                            <li>Schutz vor steigenden Energiepreisen</li>
-                            <li>Höherer Wohnkomfort durch moderne Technik</li>
-                            <li>Integrierte Ladeinfrastruktur für E-Mobilität</li>
-                        </ul>
+        <section id="konzept" class="py-16 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-12 font-montserrat">Ein Konzept, das überzeugt</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 border border-gray-200 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold mb-2 font-montserrat">Radikale Vereinfachung</h3>
+                        <p>Keine komplizierten Abrechnungen mehr. Eine Pauschalmiete deckt Wohnen, Heizen, Strom und E-Mobilität ab. Einfach, transparent und fair.</p>
+                    </div>
+                    <div class="p-6 border border-gray-200 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold mb-2 font-montserrat">Kosten senken</h3>
+                        <p>Durch die eigene Energieerzeugung und den Wegfall teurer Messtechnik und Verwaltung senken wir die "zweite Miete" nachhaltig.</p>
+                    </div>
+                    <div class="p-6 border border-gray-200 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold mb-2 font-montserrat">CO2 Freiheit</h3>
+                        <p>Unsere Gebäude sind nahezu CO2-neutral und machen Sie unabhängig von steigenden Energiepreisen am Weltmarkt.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vorteile" class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 font-montserrat">Vorteile für alle</h2>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold mb-2 text-red-600">Für Mieter:</h3>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Absolute Kostensicherheit durch Energie-Flatrate</li>
+                                <li>Schutz vor steigenden Energiepreisen</li>
+                                <li>Höherer Wohnkomfort durch moderne Technik</li>
+                                <li>Integrierte Ladeinfrastruktur für E-Mobilität</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-red-600">Für Vermieter & Investoren:</h3>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Höhere Mietrendite und Wertstabilität</li>
+                                <li>Keine CO2-Steuer, zukunftssichere Immobilie (ESG-konform)</li>
+                                <li>Reduzierter Verwaltungsaufwand (keine Nebenkostenabrechnung)</li>
+                                <li>Hohe Attraktivität für eine breite Zielgruppe</li>
+                            </ul>
+                        </div>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2 text-red-600">Für Vermieter & Investoren:</h3>
-                        <ul class="list-disc list-inside space-y-1">
-                            <li>Höhere Mietrendite und Wertstabilität</li>
-                            <li>Keine CO2-Steuer, zukunftssichere Immobilie (ESG-konform)</li>
-                            <li>Reduzierter Verwaltungsaufwand (keine Nebenkostenabrechnung)</li>
-                            <li>Hohe Attraktivität für eine breite Zielgruppe</li>
-                        </ul>
+                        <img src="/media/schluesseluebergabe.png" alt="[Bild einer Schlüsselübergabe]" class="rounded-lg shadow-lg">
                     </div>
                 </div>
-                <div>
-                    <img src="/media/schluesseluebergabe.png" alt="[Bild einer Schlüsselübergabe]" class="rounded-lg shadow-lg">
+            </div>
+        </section>
+
+        <section id="partner" class="py-16 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-12 font-montserrat">Starke Partner für ein starkes Konzept</h2>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+                    <img src="/media/logo-3lectrify.svg" alt="3lectrify Logo" class="h-12">
+                    <img src="/media/logo-rohrer.svg" alt="Rohrer Immobilien Logo" class="h-16">
+                    <img src="/media/logo-nanebau.svg" alt="Nanebau Logo" class="h-12">
+                    <img src="/media/logo-leukefeld.png" alt="Timo Leukefeld Logo" class="h-16">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="partner" class="py-16 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12 font-montserrat">Starke Partner für ein starkes Konzept</h2>
-            <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
-                <img src="/media/logo-3lectrify.svg" alt="3lectrify Logo" class="h-12">
-                <img src="/media/logo-rohrer.svg" alt="Rohrer Immobilien Logo" class="h-16">
-                <img src="/media/logo-nanebau.svg" alt="Nanebau Logo" class="h-12">
-                <img src="/media/logo-leukefeld.png" alt="Timo Leukefeld Logo" class="h-16">
-            </div>
-        </div>
-    </section>
-
-    <section id="referenzen" class="py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center font-montserrat">Erfolgreich in der Praxis</h2>
-            <div class="bg-white p-8 rounded-lg shadow-lg grid md:grid-cols-2 gap-8 items-center">
-                <img src="/media/referenz-aschersleben.jpg" alt="[Gebäude in Aschersleben]" class="rounded-lg">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 font-montserrat">Quartierssanierung Aschersleben</h3>
-                    <p>Ein Leuchtturmprojekt: Ein ganzer DDR-Plattenbau wurde energetisch saniert und auf das Energy-Flat-Living-Modell umgestellt. Das Ergebnis: 60% Energieautarkie, 100% zufriedene Mieter und eine massive Aufwertung für das gesamte Quartier. Die Nachfrage überstieg alle Erwartungen und zog neue Bewohner in die Stadt.</p>
+        <section id="referenzen" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-12 text-center font-montserrat">Erfolgreich in der Praxis</h2>
+                <div class="bg-white p-8 rounded-lg shadow-lg grid md:grid-cols-2 gap-8 items-center">
+                    <img src="/media/referenz-aschersleben.jpg" alt="[Gebäude in Aschersleben]" class="rounded-lg">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 font-montserrat">Quartierssanierung Aschersleben</h3>
+                        <p>Ein Leuchtturmprojekt: Ein ganzer DDR-Plattenbau wurde energetisch saniert und auf das Energy-Flat-Living-Modell umgestellt. Das Ergebnis: 60% Energieautarkie, 100% zufriedene Mieter und eine massive Aufwertung für das gesamte Quartier. Die Nachfrage überstieg alle Erwartungen und zog neue Bewohner in die Stadt.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="team" class="py-16 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12 font-montserrat">Wir sind für Sie da</h2>
-            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-                <img src="/media/team.jpg" alt="[Das Team von Energy Flat Living]" class="rounded-lg shadow-md">
-                <p class="text-left">Unser Kernteam vereint jahrzehntelange Erfahrung aus den Bereichen Energiekonzeption, Architektur, Bauausführung und Immobilienwirtschaft. Wir begleiten Ihr Projekt von der ersten Idee bis zur schlüsselfertigen Übergabe.</p>
+        <section id="team" class="py-16 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-12 font-montserrat">Wir sind für Sie da</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+                    <img src="/media/team.jpg" alt="[Das Team von Energy Flat Living]" class="rounded-lg shadow-md">
+                    <p class="text-left">Unser Kernteam vereint jahrzehntelange Erfahrung aus den Bereichen Energiekonzeption, Architektur, Bauausführung und Immobilienwirtschaft. Wir begleiten Ihr Projekt von der ersten Idee bis zur schlüsselfertigen Übergabe.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="kontakt" class="py-16">
-        <div class="container mx-auto px-6 max-w-2xl text-center">
-            <h2 class="text-3xl font-bold mb-6 font-montserrat">Interesse geweckt?</h2>
-            <p class="mb-8">Lassen Sie uns gemeinsam herausfinden, wie wir auch für Ihr Grundstück oder Ihr Unternehmen bezahlbaren und zukunftssicheren Wohnraum schaffen können. Wir freuen uns auf Ihre Kontaktaufnahme.</p>
-            <a href="mailto:info@energy-flat-living.com" class="bg-red-600 text-white px-8 py-4 rounded-md text-lg font-bold hover:bg-gray-800 transition">Jetzt Kontakt aufnehmen</a>
-        </div>
-    </section>
-</builder-component>
-<!-- ============== BUILDER.IO KOMPONENTE ENDE ============== -->
+        <section id="kontakt" class="py-16">
+            <div class="container mx-auto px-6 max-w-2xl text-center">
+                <h2 class="text-3xl font-bold mb-6 font-montserrat">Interesse geweckt?</h2>
+                <p class="mb-8">Lassen Sie uns gemeinsam herausfinden, wie wir auch für Ihr Grundstück oder Ihr Unternehmen bezahlbaren und zukunftssicheren Wohnraum schaffen können. Wir freuen uns auf Ihre Kontaktaufnahme.</p>
+                <a href="mailto:info@energy-flat-living.com" class="bg-red-600 text-white px-8 py-4 rounded-md text-lg font-bold hover:bg-gray-800 transition">Jetzt Kontakt aufnehmen</a>
+            </div>
+        </section>
+    `;
+
+    // Funktion zum Rendern des Inhalts
+    function renderContent(content) {
+        const el = document.getElementById('builder-content-wrapper');
+        if (el) {
+            el.innerHTML = content;
+        }
+    }
+
+    // Initial das Fallback-Layout rendern
+    renderContent(fallbackContent);
+
+    // Warten, bis das Builder.io Web Components Skript geladen ist
+    window.addEventListener('builder-web-components-loaded', function () {
+        // Initialisieren von Builder.io
+        builder.init('26c0f13841904618ba9643bccfe1de7f');
+
+        // Den Inhalt für die aktuelle Seite von Builder.io abrufen
+        builder.get('page', {
+            userAttributes: {
+                urlPath: window.location.pathname
+            }
+        }).promise().then(function (builderContent) {
+            // Prüfen, ob Inhalt von Builder.io zurückkam
+            if (builderContent) {
+                renderContent(builderContent.data.html);
+            }
+        });
+    });
+</script>
