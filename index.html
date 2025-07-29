@@ -1,12 +1,90 @@
+<!-- DATEI: _includes/layout.html (KORRIGIERT) -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    
+    <!-- TAILWIND CSS VIA CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- BUILDER.IO SCRIPT -->
+    <script async src="https://cdn.builder.io/js/webcomponents"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-roboto">
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-gray-800 font-montserrat">
+                ENERGY<span class="text-red-600">FLAT</span>LIVING
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#vorteile" class="hover:text-red-600">Vorteile</a>
+                <a href="#referenzen" class="hover:text-red-600">Referenzen</a>
+                <a href="#team" class="hover:text-red-600">Team</a>
+                <a href="#kontakt" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition">Kontakt</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#vorteile" class="block hover:text-red-600">Vorteile</a>
+            <a href="#referenzen" class="block hover:text-red-600">Referenzen</a>
+            <a href="#team" class="block hover:text-red-600">Team</a>
+            <a href="#kontakt" class="block bg-red-600 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition">Kontakt</a>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold font-montserrat">ENERGY<span class="text-red-600">FLAT</span>LIVING</h3>
+                    <p class="text-sm text-gray-400">Bezahlbarer & zukunftssicherer Wohnraum.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="/impressum" class="hover:text-red-600">Impressum</a>
+                    <a href="/datenschutz" class="hover:text-red-600">Datenschutz</a>
+                    <a href="/cookies" class="hover:text-red-600">Cookie-Einstellungen</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+
+<!-- ================================================================================================== -->
+<!-- ================================================================================================== -->
+
+<!-- DATEI: index.html (KORRIGIERT MIT NEUEM ANSATZ) -->
 ---
 title: "Energy Flat Living | Ihr Zuhause als Kraftwerk"
 layout: "layout.html"
 ---
 
-<!-- ============== BUILDER.IO KOMPONENTE (KORRIGIERT) ============== -->
-<!-- Hinzufügen von prerender="false" stellt sicher, dass der Inhalt client-seitig geladen wird. -->
-<builder-component model="page" api-key="26c0f13841904618ba9643bccfe1de7f" prerender="false">
-    <!-- Dieser Inhalt dient als Fallback und wird angezeigt, wenn Builder.io keine Inhalte findet. -->
+<!-- ============== BUILDER.IO PLATZHALTER ============== -->
+<!-- Der gesamte Inhalt ist jetzt in einem Div mit einer ID. -->
+<!-- Dies dient als Fallback und als Ziel für den JavaScript-Code. -->
+<div id="builder-content">
     <div class="relative text-white">
         <img src="/media/hero.png" alt="Modernes Mehrfamilienhaus" class="w-full h-[60vh] object-cover">
         <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center p-6">
@@ -41,7 +119,7 @@ layout: "layout.html"
                 <div>
                     <h2 class="text-3xl font-bold mb-6 font-montserrat">Vorteile für alle</h2>
                     <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-2 text-brand-red">Für Mieter:</h3>
+                        <h3 class="text-xl font-bold mb-2 text-red-600">Für Mieter:</h3>
                         <ul class="list-disc list-inside space-y-1">
                             <li>Absolute Kostensicherheit durch Energie-Flatrate</li>
                             <li>Schutz vor steigenden Energiepreisen</li>
@@ -50,7 +128,7 @@ layout: "layout.html"
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2 text-brand-red">Für Vermieter & Investoren:</h3>
+                        <h3 class="text-xl font-bold mb-2 text-red-600">Für Vermieter & Investoren:</h3>
                         <ul class="list-disc list-inside space-y-1">
                             <li>Höhere Mietrendite und Wertstabilität</li>
                             <li>Keine CO2-Steuer, zukunftssichere Immobilie (ESG-konform)</li>
@@ -105,16 +183,38 @@ layout: "layout.html"
         <div class="container mx-auto px-6 max-w-2xl text-center">
             <h2 class="text-3xl font-bold mb-6 font-montserrat">Interesse geweckt?</h2>
             <p class="mb-8">Lassen Sie uns gemeinsam herausfinden, wie wir auch für Ihr Grundstück oder Ihr Unternehmen bezahlbaren und zukunftssicheren Wohnraum schaffen können. Wir freuen uns auf Ihre Kontaktaufnahme.</p>
-            <a href="mailto:info@energy-flat-living.com" class="bg-brand-red text-white px-8 py-4 rounded-md text-lg font-bold hover:bg-brand-dark transition">Jetzt Kontakt aufnehmen</a>
+            <a href="mailto:info@energy-flat-living.com" class="bg-red-600 text-white px-8 py-4 rounded-md text-lg font-bold hover:bg-gray-800 transition">Jetzt Kontakt aufnehmen</a>
         </div>
     </section>
-</builder-component>
-<!-- ============== BUILDER.IO KOMPONENTE ENDE ============== -->
+</div>
+<!-- ============== PLATZHALTER ENDE ============== -->
 
-<!-- ============== BUILDER.IO INITIALISIERUNG ============== -->
-<script>
-    window.addEventListener('builder-web-components-loaded', function () {
-        builder.init('26c0f13841904618ba9643bccfe1de7f');
-    });
+
+<!-- ============== BUILDER.IO INITIALISIERUNG (NEUER ANSATZ) ============== -->
+<script type="text/javascript">
+    (function () {
+        // Warten, bis das Builder.io Web Components Skript geladen ist
+        window.addEventListener('builder-web-components-loaded', function () {
+            // Initialisieren von Builder.io
+            builder.init('26c0f13841904618ba9643bccfe1de7f');
+
+            // Den Inhalt für die aktuelle Seite von Builder.io abrufen
+            builder.get('page', {
+                userAttributes: {
+                    // Die URL der aktuellen Seite übergeben
+                    urlPath: window.location.pathname
+                }
+            }).promise().then(function (content) {
+                // Prüfen, ob Inhalt von Builder.io zurückkam
+                if (content) {
+                    // Den Inhalt des Platzhalter-Divs durch den von Builder.io ersetzen
+                    var el = document.getElementById('builder-content');
+                    if (el) {
+                        el.innerHTML = content.data.html;
+                    }
+                }
+            });
+        });
+    })();
 </script>
-<!-- ======================================================= -->
+<!-- ======================================================================== -->
