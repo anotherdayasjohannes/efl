@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Wiederhergestellte Original-Styles */
+.tab-button { 
+    @apply transition-all duration-300 ease-in-out rounded-none; 
+}
+.tab-active { 
+    @apply bg-orange text-white scale-105; 
+}
+.tab-inactive { 
+    @apply bg-white/10 text-white/80; 
+}
+.tab-inactive:hover { 
+    @apply bg-white/20; 
+}
+.advantage-card { 
+    @apply bg-white border border-gray-200 transition-transform duration-300 ease-in-out; 
+}
+.advantage-card:hover { 
+    @apply -translate-y-2 shadow-xl; 
+}
+.fade-in-element { 
+    @apply opacity-0 translate-y-5 transition-all duration-700 ease-out; 
+}
+.fade-in-element.is-visible { 
+    @apply opacity-100 translate-y-0; 
+}
+.modal { 
+    @apply transition-opacity duration-200 ease-in-out; 
+}
+.event-card-content { 
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, transparent 100%); 
+}
+#sticky-header { 
+    @apply -translate-y-full transition-transform duration-300 ease-in-out; 
+}
+#sticky-header.is-visible { 
+    @apply translate-y-0; 
+}
