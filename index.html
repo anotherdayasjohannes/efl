@@ -238,16 +238,26 @@ layout: "layout.html"
             <h3 class="text-4xl font-normal text-dark-grey sm:text-5xl tracking-tight">Events & Dates</h3>
             <p class="mt-5 text-lg text-middle-grey">Erleben Sie unser Konzept live und tauschen Sie sich mit unseren Experten und zufriedenen Kunden aus. Wir laden Sie herzlich zu unseren regelmäßigen Veranstaltungen in unserem Kompetenzzentrum nach Sauerlach ein.</p>
         </div>
-        <div class="mt-20 flex justify-center">
-            <div class="lg:w-2/3 shadow-lg rounded-lg overflow-hidden relative">
-            <img src="/media/team.jpg" alt="Experten auf einer Podiumsdiskussion" class="w-full h-full object-cover">
-            <div class="absolute inset-0 event-card-content flex flex-col justify-end p-8 text-white">
-                <p class="text-sm">Sauerlach ⋅ 29. September 2025 ⋅ 18:00 Uhr</p>
-                <h4 class="text-2xl font-normal mt-2">Expertentalk: Die Pauschalmiete als Rendite-Booster</h4>
-                <a href="#" class="mt-6 bg-curry text-dark-grey font-normal py-3 px-6 uppercase tracking-wider transition-transform hover:scale-105 self-start">
-                Zur Anmeldung
-                </a>
-            </div>
+<div id="eventbrite-widget-container-1576245455589" class="mt-16"></div>
+
+<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+<script type="text/javascript">
+    var exampleCallback = function() {
+        console.log('Bestellung ist abgeschlossen!');
+    };
+
+    window.EBWidgets.createWidget({
+        // Required
+        widgetType: 'checkout',
+        eventId: '1576245455589',
+        iframeContainerId: 'eventbrite-widget-container-1576245455589',
+
+        // Optional
+        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+        onOrderComplete: exampleCallback  // Method called when an order has successfully completed
+    });
+</script>
             </div>
             <!-- <div class="space-y-8">
                 <h4 class="text-xl font-normal text-dark-grey border-b pb-2">Vergangene Events</h4>
