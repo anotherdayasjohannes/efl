@@ -28,7 +28,7 @@ module.exports = {
       },
       // Hinzugefügt, um das Hero-Bild per CSS-Klasse zu ermöglichen
       backgroundImage: {
-        'hero-bg': "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/hero2.jpg')",
+        'hero-bg': "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/hero2.jpeg')",
       }
     }
   },
